@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "570867317936",
+    "firebase_url": "https://traincensus.firebaseio.com",
+    "project_id": "traincensus",
+    "storage_bucket": "traincensus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570867317936:android:14c5ddb544d70210",
+        "android_client_info": {
+          "package_name": "com.example.traincensus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570867317936-2ov3ucu0tg22fh2hcpmm58u3oe07e6rg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.traincensus",
+            "certificate_hash": "3c397deb0c0834bec5bd154d67d287c011c0e32e"
+          }
+        },
+        {
+          "client_id": "570867317936-3soav7lvjbqqq2bc32otag4stb94hmau.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBvB-M6hZ9mXmZJTQilX1J8i_cMRrVzgs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570867317936-3soav7lvjbqqq2bc32otag4stb94hmau.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

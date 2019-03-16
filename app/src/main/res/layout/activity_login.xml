@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:background="#fff"
+    android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="403dp"
+                android:layout_height="208dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/loginpic" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="60dp"
+                android:text="FIELD OFFICER"
+                android:textColor="#012b74"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:background="@color/c"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="25dp"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/pfno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="0dp"
+                android:drawableLeft="@drawable/logout"
+                android:layout_marginEnd="25dp"
+                android:textColor="#150FFF"
+                android:layout_marginRight="25sp"
+                android:background="@drawable/buttondesign"
+                android:hint="PF NO"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColorHint="#150FFF" />
+
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25sp"
+                android:background="@drawable/buttondesign"
+                android:drawableLeft="@drawable/lock"
+                android:hint="password"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="#150FFF"
+                android:textColorHint="#150FFF" />
+
+            <Button
+                android:id="@+id/signin"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/signinbutton"
+                android:text="SIGN IN"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

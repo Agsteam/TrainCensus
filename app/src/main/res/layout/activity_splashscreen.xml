@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".Splashscreen">
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            android:tag="tag content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:background="@drawable/lo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="66dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/dfd" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="581dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+
+                    android:text="Indian Railways"
+                    android:textColor="#01b9f5"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/open_sans_bold" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+
+                    android:text="Southern Railway"
+                    android:textColor="#01b9f5"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/open_sans_bold" />
+
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+
+                    android:text="Welcomes you to"
+                    android:textColor="#01b9f5"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/open_sans_bold" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+
+                    android:text="Rail Census"
+                    android:textColor="#012b74"
+                    android:textSize="30sp"
+                    app:fontFamily="@font/open_sans_bold" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+
+                    android:text="Any time...Anywhere..."
+                    android:textColor="#012b74"
+                    android:textSize="12sp"
+                    app:fontFamily="@font/open_sans_bold" />
+
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="370dp"
+                    android:layout_height="254dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginTop="30dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/logos" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

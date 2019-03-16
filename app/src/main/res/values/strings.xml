@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TrainCensus</string>
+    <string name="field_officers" />
+    <string name="tag_content" />
+    <string name="census" />
+    <string name="hq_admin">HQ ADMIN</string>
+    <string name="div_admin">DIV ADMIN</string>
+    <string name="fieldfficers">Field Officers</string>
+    <string name="todo">TODO</string>
+    <string name="spinner_title" />
+    <string name="div_name">DIV NAME</string>
+    <string name="section">SECTION</string>
+    <string name="station">STATION</string>
+    <string name="submit">Submit</string>
+    <string name="pf_number" />
+    <string name="assign_census_officer" />
+    <string name="rail_census">Rail Census</string>
+    <string name="to">To</string>
+
+</resources>
