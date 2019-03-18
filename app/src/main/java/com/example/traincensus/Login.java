@@ -1,6 +1,8 @@
 package com.example.traincensus;
 
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -24,13 +26,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import static com.example.traincensus.Splashscreen.mpref;
+
 public class Login extends AppCompatActivity
 {
     EditText pf1, dob1;
     TextView hdloginlable;
     Button singin1;
-    String loginpf,loginpass,a,div,sec,sta,name="",actype;
-    Date sfin,sfout;
+    String loginpf,loginpass,a,name="",actype;
     FirebaseFirestore database1=FirebaseFirestore.getInstance();
     DocumentReference noteRef=database1.document("");
     protected void onCreate(Bundle savedInstanceState)
@@ -66,35 +69,28 @@ public class Login extends AppCompatActivity
                                 {
                                     String pfvali = doc.getString("Pfno");
                                     String d = doc.getString("DOB");
-                                    if (pfvali.equals(loginpf) && d.equals(loginpass) )
+                                    if (pfvali.equals(loginpf) && d.equals(loginpass))
                                     {
-
                                         name = doc.getString("Name");
-                                        div = doc.getString("Division");
-                                        sta = doc.getString("Station");
-                                        sfin = doc.getDate("Shift in");
-                                        sfout = doc.getDate("Shift out");
-                                        sec = doc.getString("section");
                                         actype = doc.getString("Accestype");
                                     }
                                 }
                                 if(!name.equals("")&& !a.equals(actype))
                                 {
-                                    Toast.makeText(Login.this,"Your not authorised to login"+a+actype,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Login.this,"Your not authorised to login "+hdloginlable.getText().toString(),Toast.LENGTH_SHORT).show();
                                 }
                                 else if (!name.equals(""))
                                 {
                                     Intent intent = new Intent(Login.this, Welcomescreen.class);
-                                    Log.e("sundar",div);
-                                    intent.putExtra("name1", name);
-                                    intent.putExtra("div1", div);
-                                    intent.putExtra("Sta1", sta);
-                                    intent.putExtra("acsty", actype);
-                                    intent.putExtra("sinin", sfin);
-                                    intent.putExtra("sinout", sfout);
-                                    intent.putExtra("sec1", sec);
-                                    intent.putExtra("lable", hdloginlable.getText().toString());
-                                   startActivity(intent);
+                                    SharedPreferences.Editor editor=mpref.edit();
+                                    editor.putString("Username",loginpf);
+                                    editor.putString("Password",loginpass);
+                                    editor.putString("Accesstype",a);
+
+
+                                    editor.putString("Name",name);
+                                    editor.apply();
+                                    startActivity(intent);
                                 }
                                 else
                                 {

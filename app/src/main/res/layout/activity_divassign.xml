@@ -2,12 +2,11 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Divassign"
-
     android:orientation="vertical"
     android:background="#fff"
     android:gravity="right">
@@ -94,8 +93,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="5.5"
+                                android:fontFamily="@font/open_sans_bold"
                                 android:text="Division Name"
                                 android:textColor="#205cf6"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
 
@@ -124,12 +125,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/buttondesign"
+                                android:fontFamily="@font/open_sans_bold"
                                 android:inputType="number"
+
+
                                 android:maxLines="1"
-
-
                                 android:singleLine="true"
-                                android:textColorHint="#333333" />
+                                android:textAlignment="center"
+                                android:textColor="#01B9F5"
+                                android:textColorHint="#333333"
+                                android:textSize="18sp" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -156,8 +161,10 @@
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/open_sans_bold"
                                 android:text="Section"
                                 android:textColor="#205cf6"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
 
@@ -189,7 +196,8 @@
 
                                 android:layout_height="wrap_content"
 
-                                />
+                                android:popupBackground="@color/ic_launcher_background"
+                                android:spinnerMode="dropdown" />
 
 
                             <View
@@ -222,6 +230,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Station"
                                 android:textColor="#205cf6"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
 
@@ -280,10 +289,11 @@
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/open_sans_bold"
                                 android:text="Fill Officer Details"
                                 android:textAlignment="center"
                                 android:textColor="#205cf6"
-                                android:textSize="20sp"
+                                android:textSize="24sp"
                                 android:textStyle="bold" />
 
 
@@ -310,6 +320,7 @@
                                 android:layout_weight="5.5"
                                 android:text="Name"
                                 android:textColor="#205cf6"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
 
@@ -334,17 +345,22 @@
                             >
 
                             <EditText
-                                android:id="@+id/ccy"
+                                android:id="@+id/nameview"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/buttondesign"
 
+                                android:fontFamily="@font/open_sans_bold"
                                 android:inputType="number"
+
+
                                 android:maxLines="1"
-
-
                                 android:singleLine="true"
-                                android:textColorHint="#333333" />
+                                android:textAlignment="center"
+                                android:textColor="#012B74"
+                                android:textColorHint="#333333"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -369,8 +385,10 @@
                                 android:id="@+id/pfno"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="PFNO"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="PfNo"
                                 android:textColor="#205cf6"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
 
@@ -399,11 +417,16 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/buttondesign"
-                                android:inputType="number"
+                                android:fontFamily="@font/open_sans_bold"
 
+                                android:inputType="number"
                                 android:maxLines="1"
                                 android:singleLine="true"
-                                android:textColorHint="#333333" />
+                                android:textAlignment="center"
+                                android:textColor="#012B74"
+                                android:textColorHint="#333333"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -461,7 +484,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Shift in"
+                                android:textAlignment="viewStart"
                                 android:textColor="#205cf6"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
 
@@ -485,7 +510,7 @@
 
                             >
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/shiftinview"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -493,7 +518,11 @@
                                 android:hint="7.00Am"
                                 android:inputType="number"
                                 android:maxLines="1"
-                                android:textColorHint="#333333" />
+                                android:textAlignment="center"
+                                android:textColor="#012B74"
+                                android:textColorHint="#333333"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -522,7 +551,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Shift out"
+                                android:textAlignment="viewStart"
                                 android:textColor="#205cf6"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
 
@@ -546,7 +577,7 @@
 
                             >
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/shiftoutview"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -554,7 +585,11 @@
                                 android:hint="7.00pm"
                                 android:inputType="number"
                                 android:maxLines="1"
-                                android:textColorHint="#333333" />
+                                android:textAlignment="center"
+                                android:textColor="#012B74"
+                                android:textColorHint="#333333"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -582,22 +617,28 @@
                                 android:id="@+id/date"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="DATE"
+                                android:text="Date"
+                                android:textAlignment="viewStart"
                                 android:textColor="#205cf6"
+                                android:textSize="18sp"
                                 android:textStyle="bold" />
 
 
                         </LinearLayout>
 
-                        <Button
+                        <TextView
                             android:id="@+id/dateview"
-                            android:layout_width="379dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:background="@color/c"
+                            android:hint="Enter duty date"
                             android:maxLines="1"
-                            android:text="Pick Duty Date"
-                            android:textColorHint="#0000" />
+                            android:textAlignment="center"
+                            android:textColor="#01B9F5"
+                            android:textColorHint="#fff"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
 
@@ -616,16 +657,6 @@
                             android:orientation="vertical"
 
                             >
-
-                            <EditText
-                                android:id="@+id/sst"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/buttondesign"
-
-                                android:inputType="number"
-                                android:maxLines="1"
-                                android:textColorHint="#333333" />
 
                             <View
                                 android:layout_width="match_parent"
@@ -674,18 +705,16 @@
 
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
         style="@style/AppTheme.AppBarOverlay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/fab"
+        android:layout_height="75dp"
         android:layout_gravity="bottom|right"
-
+        android:layout_margin="16dp"
+        android:orientation="vertical"
         android:src="@drawable/key"
         app:backgroundTint="@color/c"
-        app:fabCustomSize="@android:dimen/notification_large_icon_width"
         app:fabSize="auto"
-        app:pressedTranslationZ="@android:dimen/app_icon_size"
-        app:rippleColor="@color/colorPrimaryDark"
-        app:srccompat="@drawable/key" />
+        />
 
 </android.support.design.widget.CoordinatorLayout>

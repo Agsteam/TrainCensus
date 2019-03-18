@@ -10,15 +10,19 @@
 
     <TextView
 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-
-        android:text="CENSUS OFFICER"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="2dp"
+        android:background="#01B9F5"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="@string/census_officer"
+        android:textAlignment="center"
         android:textColor="#fff"
-        android:textSize="25sp"
+        android:textSize="20sp"
+
+
         android:textStyle="bold" />
 
 

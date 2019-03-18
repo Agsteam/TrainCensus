@@ -16,5 +16,16 @@
     <string name="assign_census_officer" />
     <string name="rail_census">Rail Census</string>
     <string name="to">To</string>
+    <string name="action_settings" />
+    <string name="census_officer">CENSUS OFFICER</string>
+
+    <string-array name="hu">
+
+
+        <item>jj</item>
+        <item>huhu</item>
+    </string-array>
+
+
 
 </resources>
