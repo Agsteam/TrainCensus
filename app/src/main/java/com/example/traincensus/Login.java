@@ -86,8 +86,6 @@ public class Login extends AppCompatActivity
                                     editor.putString("Username",loginpf);
                                     editor.putString("Password",loginpass);
                                     editor.putString("Accesstype",a);
-
-
                                     editor.putString("Name",name);
                                     editor.apply();
                                     startActivity(intent);

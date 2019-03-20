@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="#fff"
+    android:background="#FFF"
     android:layout_height="match_parent" >
 
 
@@ -17,9 +17,9 @@
 
         <include layout="@layout/toolbar" />
 
-
-
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
             <LinearLayout
@@ -30,39 +30,36 @@
                 android:orientation="vertical">
 
 
-
-
                 <TextView
                     android:id="@+id/divid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="5.5"
                     android:text="DIVISION"
-                    android:layout_marginLeft="10dp"
                     android:textColor="#205cf6"
                     android:textStyle="bold" />
+
                 <TextView
 
                     android:id="@+id/divview"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_margin="8dp"
-                    android:background="@color/c"
+                    android:background="@drawable/shape1"
+                    android:fontFamily="@font/open_sans_bold"
                     android:gravity="center"
-                    android:textColor="#fff"
+                    android:textColor="#000"
                     android:textSize="14dp"
                     android:textStyle="bold" />
-
-
-
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:orientation="vertical"
                     android:paddingLeft="8dp"
-                    android:layout_marginTop="10dp"
                     android:paddingTop="16dp">
 
                     <LinearLayout
@@ -92,8 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingTop="16dp"
-                    >
+                    android:paddingTop="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -108,9 +104,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_margin="8dp"
-                            android:background="@color/c"
+                            android:background="@drawable/shape1"
+                            android:fontFamily="@font/open_sans_bold"
                             android:gravity="center"
-                            android:textColor="#fff"
+                            android:textColor="#000"
                             android:textSize="14dp"
                             android:textStyle="bold" />
 
@@ -120,26 +117,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
+                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/staid"
-                            android:layout_weight="5.5"
-                            android:layout_margin="8dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:layout_weight="5.5"
                             android:text="STATION"
-                            android:textStyle="bold"
-                            android:textColor="#205cf6" />
-
-
+                            android:textColor="#205cf6"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -151,15 +145,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingTop="16dp"
-                    >
+                    android:paddingTop="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="66dp"
                         android:orientation="vertical"
-
-
                         >
 
                         <TextView
@@ -167,10 +158,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_margin="8dp"
-                            android:background="@color/c"
-                            android:textColor="#fff"
-
-                            />
+                            android:background="@drawable/shape1"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center"
+                            android:textColor="#000"
+                            android:textStyle="bold" />
 
                         <View
                             android:layout_width="match_parent"
@@ -195,12 +187,12 @@
 
                         <TextView
                             android:id="@+id/dateid"
-                            android:layout_weight="5.5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="5.5"
                             android:text="DATE"
-                            android:textStyle="bold"
-                            android:textColor="#205cf6" />
+                            android:textColor="#205cf6"
+                            android:textStyle="bold" />
 
 
                     </LinearLayout>
@@ -214,8 +206,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingTop="16dp"
-                    >
+                    android:paddingTop="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -225,18 +216,20 @@
 
                         >
 
+                        It Sundar, [19.03.19 11:22]
                         <TextView
                             android:id="@+id/dateview"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@color/c"
                             android:layout_margin="8dp"
-
+                            android:background="@drawable/shape1"
+                            android:fontFamily="@font/open_sans_bold"
+                            android:gravity="center"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:textColor="#fff"
-
-                            android:textColorHint="#333333" />
+                            android:textColor="#000"
+                            android:textColorHint="#333333"
+                            android:textStyle="bold" />
 
 
                     </LinearLayout>
@@ -244,16 +237,17 @@
 
 
                 <LinearLayout
-                    android:layout_width="347dp"
-                    android:layout_height="104dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
                     android:orientation="vertical">
 
 
                     <TextView
                         android:id="@+id/shiftinid"
-                        android:layout_width="99dp"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
                         android:text="Shift In"
@@ -261,88 +255,70 @@
                         android:textSize="18dp"
                         android:textStyle="bold" />
 
-
                     <TextView
-                        android:id="@+id/shiftoutid"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="200dp"
-                        android:layout_marginTop="-25dp"
-                        android:text="Shift Out"
-                        android:textColor="#205cf6"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-
-                    <EditText
                         android:id="@+id/shiftinview"
-                        android:layout_width="69dp"
+                        android:layout_width="match_parent"
                         android:layout_height="30dp"
+                        android:layout_margin="8dp"
                         android:layout_marginLeft="40dp"
-                        android:background="@color/c"
-                        android:inputType="textEmailAddress"
+                        android:background="@drawable/shape1"
+                        android:fontFamily="@font/open_sans_bold"
                         android:maxLines="1"
                         android:singleLine="true"
                         android:textColor="#000"
-                        android:textColorHint="#333333" />
-
-                    <EditText
-                        android:id="@+id/shiftoutview"
-                        android:layout_width="69dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="200dp"
-                        android:layout_marginTop="-25dp"
-                        android:background="@color/c"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:textColor="#000"
-                        android:textColorHint="#333333" />
+                        android:textColorHint="#333333"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/shiftoutid"
+                        android:layout_margin="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="Shift Out"
+                        android:textColor="#205cf6"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/shiftoutview"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="8dp"
+                        android:layout_marginLeft="40dp"
+                        android:background="@drawable/shape1"
+                        android:fontFamily="@font/open_sans_bold"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="#000"
+                        android:textColorHint="#333333"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
                 <Button
                     android:id="@+id/nextid"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-
+                    android:layout_height="wrap_content"
                     android:background="@drawable/signinbutton"
                     android:gravity="center"
                     android:text="NEXT"
-                    android:textColor="#fff"
+                    android:layout_marginTop="20dp"                android:textColor="#fff"
                     android:textSize="13dp"
-
                     />
-
-
-
-
-
-
-
             </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
+        </ScrollView>
     </LinearLayout>
-
-
-
-
-
-
-
-
-
 </LinearLayout>
-

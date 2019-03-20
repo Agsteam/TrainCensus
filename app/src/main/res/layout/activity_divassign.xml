@@ -132,7 +132,7 @@
                                 android:maxLines="1"
                                 android:singleLine="true"
                                 android:textAlignment="center"
-                                android:textColor="#01B9F5"
+                                android:textColor="#000"
                                 android:textColorHint="#333333"
                                 android:textSize="18sp" />
 
@@ -357,7 +357,7 @@
                                 android:maxLines="1"
                                 android:singleLine="true"
                                 android:textAlignment="center"
-                                android:textColor="#012B74"
+                                android:textColor="#000"
                                 android:textColorHint="#333333"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
@@ -423,7 +423,7 @@
                                 android:maxLines="1"
                                 android:singleLine="true"
                                 android:textAlignment="center"
-                                android:textColor="#012B74"
+                                android:textColor="#000"
                                 android:textColorHint="#333333"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />

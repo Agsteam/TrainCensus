@@ -9,779 +9,421 @@
     android:background="#fff"
     android:gravity="right">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
 
-        </include>
+    </include>
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+
+        android:tag="tagcontent">
+
+
+
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-
-
-            android:tag="tagcontent">
+            android:layout_height="match_parent">
 
 
 
 
-            <ScrollView
+
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-
-
-
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#dad8d8"
+                    android:gravity="bottom"/>
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#dad8d8"
-                        android:gravity="bottom"/>
+                    android:layout_height="729dp"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:paddingTop="12dp">
 
 
+                    <!--****ADDRESS LINE 2 FIELD****-->
 
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="16dp"
-                        android:paddingTop="12dp">
-
-
-
-
-
-
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
-
-
-
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                >
-
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                <TextView
-                                    android:id="@+id/TNO"
-                                    android:layout_weight="5.5"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="TRAIN NO"
-                                    android:textStyle="bold"
-                                    android:textColor="#205cf6" />
-
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
+                        android:paddingTop="16dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:paddingTop="16dp"
+                            android:paddingTop="12dp">
+
                             >
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
 
-                                >
-
-                                <EditText
-                                    android:id="@+id/tno"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:inputType="number"
-                                    android:background="@drawable/buttondesign"
-                                    android:maxLines="1"
-
-
-                                    android:singleLine="true"
-                                    android:textColorHint="#333333" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#ffff" />
-                            </LinearLayout>
                         </LinearLayout>
+                    </LinearLayout>
 
 
+                    <!--****ADDRESS LINE 2 FIELD****-->
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                <TextView
-                                    android:id="@+id/mob8"
-
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="COACH TYPE"
-                                    android:textStyle="bold"
-                                    android:textColor="#205cf6" />
-
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:paddingTop="16dp"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/style"
-                                android:orientation="vertical"
-
-                                >
-
-                                <Spinner
-
-                                    android:id="@+id/coachtype"
-                                    android:layout_width="fill_parent"
-
-                                    android:layout_height="wrap_content"
-
-                                    />
-
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#dad8d8" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-
-
-
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                <TextView
-                                    android:id="@+id/cc"
-
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="COACH NO"
-                                    android:textStyle="bold"
-                                    android:textColor="#205cf6"/>
-
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="16dp"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-
-                                >
-
-                                <EditText
-                                    android:id="@+id/coachno"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:inputType="number"
-
-                                    android:background="@drawable/buttondesign"
-                                    android:maxLines="1"
-
-
-                                    android:singleLine="true"
-                                    android:textColorHint="#333333" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#ffff" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                <TextView
-                                    android:id="@+id/email9"
-                                    android:layout_weight="5.5"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="CARRYING CAPACITY"
-                                    android:textStyle="bold"
-                                    android:textColor="#205cf6" />
-
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="16dp"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-
-                                >
-
-                                <EditText
-                                    android:id="@+id/ccy"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:inputType="number"
-
-                                    android:background="@drawable/buttondesign"
-                                    android:maxLines="1"
-
-
-                                    android:singleLine="true"
-                                    android:textColorHint="#333333" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#dad8d8" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                <TextView
-                                    android:id="@+id/renewalmode"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="MALE"
-                                    android:textStyle="bold"
-                                    android:textColor="#205cf6" />
-
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="16dp"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-
-                                >
-                                <EditText
-                                    android:id="@+id/male"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColorHint="#333333"
-                                    android:inputType="number"
-
-                                    android:singleLine="true"
-                                    android:background="@drawable/buttondesign"
-                                    android:maxLines="1" />
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#dad8d8" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                <TextView
-                                    android:id="@+id/editTextfe"
-
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="FEMALE"
-                                    android:textStyle="bold"
-                                    android:textColor="#205cf6" />
-
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="16dp"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-
-                                >
-
-                                <EditText
-                                    android:id="@+id/female"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColorHint="#333333"
-                                    android:inputType="number"
-                                    android:background="@drawable/buttondesign"
-                                    android:singleLine="true"
-
-                                    android:maxLines="1" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#dad8d8" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                <TextView
-                                    android:id="@+id/amountexc12"
-
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="SENIOR CITIZENS"
-                                    android:textStyle="bold"
-                                    android:textColor="#205cf6" />
-
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="16dp"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-
-                                >
-
-                                <EditText
-                                    android:id="@+id/sc"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColorHint="#333333"
-                                    android:background="@drawable/buttondesign"
-                                    android:inputType="number"
-                                    android:maxLines="1" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#dad8d8" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                <TextView
-
-
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="STUDENT"
-                                    android:textStyle="bold"
-                                    android:textColor="#205cf6" />
-
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="16dp"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-
-                                >
-
-                                <EditText
-                                    android:id="@+id/student_count"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:inputType="number"
-                                    android:background="@drawable/buttondesign"
-                                    android:maxLines="1"
-                                    android:textColorHint="#333333" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#dad8d8" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingTop="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
-
-                                <TextView
-
-
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="SEASON TICKET"
-                                    android:textStyle="bold"
-                                    android:textColor="#205cf6" />
-
-
-                            </LinearLayout>
+                            android:paddingTop="12dp">
 
                             <TextView
-                                android:id="@+id/tt"
+                                android:id="@+id/TNO"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="number"
+                                android:layout_weight="5.5"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="TRAIN NO"
+                                android:textColor="#205cf6"
+                                android:textStyle="bold" />
 
-                                android:maxLines="1"
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            >
+
+                            <AutoCompleteTextView
+                                android:id="@+id/tno"
+                                style="@android:style/Widget.AutoCompleteTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/buttondesign"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:textColor="#000"
                                 android:textColorHint="#333333" />
+                            <Button
+                                android:id="@+id/button"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Load Latest Arrival Trains" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#ffff" />
                         </LinearLayout>
+                    </LinearLayout>
 
 
-                        <!--****ADDRESS LINE 2 FIELD****-->
-
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:paddingTop="16dp"
-                            >
+                            android:paddingTop="12dp">
 
-                            <LinearLayout
+                            <TextView
+                                android:id="@+id/mob8"
+
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="COACH TYPE"
+                                android:textColor="#205cf6"
+                                android:textStyle="bold" />
 
-                                >
 
-                                <EditText
-                                    android:id="@+id/sst"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:inputType="number"
-
-                                    android:background="@drawable/buttondesign"
-                                    android:maxLines="1"
-                                    android:textColorHint="#333333" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#dad8d8" />
-                            </LinearLayout>
                         </LinearLayout>
+                    </LinearLayout>
 
 
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/style"
                             android:orientation="vertical"
-                            android:paddingTop="16dp">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
+                            >
+
+                            <Spinner
+
+                                android:id="@+id/coachtype"
+                                android:layout_width="fill_parent"
+
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:paddingTop="12dp">
 
-                                <TextView
+                                android:popupBackground="@drawable/shape1" />
 
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="5.5"
-
-                                    android:text="TOTAL COUNT"
-                                    android:textColor="#205cf6"
-                                    android:textStyle="bold" />
-
-
-                                <TextView
-                                    android:id="@+id/tc"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="5.5"
-                                    android:background="@drawable/buttondesign"
-                                    android:textColor="#205cf6"
-                                    android:textStyle="bold" />
-
-
-                            </LinearLayout>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#dad8d8" />
                         </LinearLayout>
+                    </LinearLayout>
 
 
-                        <!--****ADDRESS LINE 2 FIELD****-->
+                    <!--****ADDRESS LINE 2 FIELD****-->
 
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:paddingTop="16dp"
-                            >
+                            android:paddingTop="12dp">
 
-                            <LinearLayout
+                            <TextView
+                                android:id="@+id/cc"
+
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-
-                                >
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="1dp"
-                                    android:background="#dad8d8" />
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="No of Coach"
+                                android:textColor="#205cf6"
+                                android:textStyle="bold" />
 
 
-
-
-                            </LinearLayout>
                         </LinearLayout>
+                    </LinearLayout>
 
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:paddingTop="30dp"
+
                             >
 
-                            <LinearLayout
+                            <EditText
+                                android:id="@+id/coachno"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                               >
+                                android:background="@drawable/buttondesign"
 
-                                <Button
-                                    android:id="@+id/submit"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="40dp"
-                                    android:layout_alignParentBottom="true"
-                                    android:background="@drawable/signinbutton"
-                                    android:gravity="center"
-                                    android:text="SUBMIT"
-                                    android:textColor="#fff"
-                                    android:textSize="13dp" />
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="center"
 
-                            </LinearLayout>
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textColor="#000"
+                                android:textColorHint="#333333" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#ffff" />
                         </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+
+                            <TextView
+                                android:id="@+id/email9"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5.5"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="CARRYING CAPACITY"
+                                android:textColor="#205cf6"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            >
+
+                            <EditText
+                                android:id="@+id/ccy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/buttondesign"
+
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="center"
+
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                                android:textColorHint="#333333" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#dad8d8" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5.5"
+
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="TOTAL COUNT"
+                                android:textColor="#205cf6"
+                                android:textStyle="bold" />
+
+
+                            <TextView
+                                android:id="@+id/tc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5.5"
+                                android:background="@drawable/buttondesign"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:textColor="#000"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="30dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <Button
+                                android:id="@+id/submit"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_alignParentBottom="true"
+                                android:background="@drawable/signinbutton"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:gravity="center"
+                                android:text="SUBMIT"
+                                android:textColor="#fff"
+                                android:textSize="13dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
 
 
 
-                                            </LinearLayout>
+
                 </LinearLayout>
+            </LinearLayout>
 
 
 
-            </ScrollView>
+        </ScrollView>
 
-        </LinearLayout>
+    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

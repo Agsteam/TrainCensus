@@ -5,18 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/toolbar"
-    android:background="#012b74">
+    android:background="#007fff">
 
 
     <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="2dp"
-        android:background="#01B9F5"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+
         android:text="@string/census_officer"
         android:textAlignment="center"
         android:textColor="#fff"
