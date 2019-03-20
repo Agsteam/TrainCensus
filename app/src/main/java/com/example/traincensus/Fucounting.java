@@ -38,6 +38,7 @@ import okhttp3.ResponseBody;
 
 public class Fucounting extends AppCompatActivity
 {
+    String c,code="";
     AutoCompleteTextView listView;
     List<String> list;
     Button trains1;
@@ -52,28 +53,32 @@ public class Fucounting extends AppCompatActivity
         setContentView(R.layout.activity_fucounting);
         trains1=(Button)findViewById(R.id.button);
         listView = (AutoCompleteTextView) findViewById(R.id.tno);
-        ArrayList<String> strings = new ArrayList<>();
-        strings.add("test");
-        strings.add("test1");
-        final String[] COUNTRIES = new String[] {
-                "Belgium", "France", "Italy", "Germany", "Spain"
-        };
-        adapter = new ArrayAdapter<String>(this, R.layout.auto_complete_item, COUNTRIES);
-        listView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
         super.onStart();
+        for(int i=0;i<Welcomescreen.sta.length();i++)
+        {
+            int za=0;
+            c=Welcomescreen.sta.substring(za+i,za+i+1);
+            if(c.equals("("))
+            {
+                    code = Welcomescreen.sta.substring(i+1, (Welcomescreen.sta.length()-1));
+            }
+        }
+        code=code.toLowerCase();
         request = new Request.Builder()
-                .url("https://api.railwayapi.com/v2/arrivals/station/mas/hours/4/apikey/k8792aaq6q/")
+                .url("https://api.railwayapi.com/v2/arrivals/station/"+code+"/hours/4/apikey/k8792aaq6q/")
                 .build();
-        trains1.setOnClickListener(new View.OnClickListener() {
+        trains1.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 sun1();
             }
         });
     }
     public void sun1()
     {
+
         client.newCall(request).enqueue(new Callback()
         {
             @Override public void onFailure(Call call, IOException e)
