@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,49 +31,62 @@ import static com.example.traincensus.Splashscreen.mpref;
 
 public class Login extends AppCompatActivity
 {
+    ProgressBar lprogress;
     EditText pf1, dob1;
     TextView hdloginlable;
     Button singin1;
-    String loginpf,loginpass,a,name="",actype;
+    String loginpf,loginpass,a,name="",actype,divname;
     FirebaseFirestore database1=FirebaseFirestore.getInstance();
     DocumentReference noteRef=database1.document("");
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        lprogress=(ProgressBar)findViewById(R.id.progressBar3);
         hdloginlable = (TextView) findViewById(R.id.textView5);
         hdloginlable.setText(getIntent().getStringExtra("lable"));
         pf1=(EditText)findViewById(R.id.pfno);
         dob1=(EditText)findViewById(R.id.dob);
         singin1 = (Button) findViewById(R.id.signin);
+        lprogress.setVisibility(View.GONE);
         singin1.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
+                lprogress.setVisibility(View.VISIBLE);
                 loginpf = pf1.getText().toString().trim();
                 loginpass = dob1.getText().toString().trim();
-                if (hdloginlable.getText().toString().equals("Divisional Admin")) {
+                if (hdloginlable.getText().toString().equals("Divisional Admin"))
+                {
                     a = "Div";
-                } else if (hdloginlable.getText().toString().equals("Census Officer")) {
+                }
+                else if (hdloginlable.getText().toString().equals("Census Officer"))
+                {
                     a = "field";
                 }
-                if (loginpf.length() > 0 && loginpass.length() > 0) {
-                    database1.collection("Login").addSnapshotListener(new EventListener<QuerySnapshot>() {
+                if (loginpf.length() > 0 && loginpass.length() > 0)
+                {
+                    database1.collection("Login").addSnapshotListener(new EventListener<QuerySnapshot>()
+                    {
                         @Override
-                        public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
-                            if (e != null) {
+                        public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e)
+                        {
+                            if (e != null)
+                            {
                                 Log.d("sun", "error" + e.getMessage());
                             }
                             else
                             {
                                 for (DocumentSnapshot doc : queryDocumentSnapshots)
                                 {
-                                    String pfvali = doc.getString("Pfno");
-                                    String d = doc.getString("DOB");
+                                    String pfvali = doc.getString("pfno");
+                                    String d = doc.getString("dob");
                                     if (pfvali.equals(loginpf) && d.equals(loginpass))
                                     {
-                                        name = doc.getString("Name");
-                                        actype = doc.getString("Accestype");
+                                        name = doc.getString("name");
+                                        actype = doc.getString("accestype");
+                                        divname=doc.getString("division");
                                     }
                                 }
                                 if(!name.equals("")&& !a.equals(actype))
@@ -80,6 +94,8 @@ public class Login extends AppCompatActivity
                                     Toast.makeText(Login.this,"Your not authorised to login "+hdloginlable.getText().toString(),Toast.LENGTH_SHORT).show();
                                 }
                                 else if (!name.equals(""))
+
+
                                 {
                                     Intent intent = new Intent(Login.this, Welcomescreen.class);
                                     SharedPreferences.Editor editor=mpref.edit();
@@ -87,18 +103,65 @@ public class Login extends AppCompatActivity
                                     editor.putString("Password",loginpass);
                                     editor.putString("Accesstype",a);
                                     editor.putString("Name",name);
+                                    editor.putString("Division",divname);
                                     editor.apply();
                                     startActivity(intent);
+                                    lprogress.setVisibility(View.GONE);
                                 }
                                 else
                                 {
                                     Toast.makeText(Login.this,"Please Check UserName and Password ",Toast.LENGTH_SHORT).show();
+                                    lprogress.setVisibility(View.GONE);
                                 }
                             }
                         }
                     });
                 }
+                else if(loginpf.equals("")&&loginpass.equals(""))
+                {
+                    Toast.makeText(Login.this,"Please Fill UserName and Password",Toast.LENGTH_SHORT).show();
+                    lprogress.setVisibility(View.GONE);
+                }
+                else if(loginpf.equals(""))
+                {
+                    Toast.makeText(Login.this,"Please Fill UserName",Toast.LENGTH_SHORT).show();
+                    lprogress.setVisibility(View.GONE);
+                }
+                else if (loginpass.equals(""))
+                {
+                    Toast.makeText(Login.this,"Please Fill Password",Toast.LENGTH_SHORT).show();
+                    lprogress.setVisibility(View.GONE);
+                }
             }
         });
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

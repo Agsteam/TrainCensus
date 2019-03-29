@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Welcomescreen"
     android:orientation="vertical"
-    android:background="#fff">
+    android:background="@drawable/bc">
 
 
     <LinearLayout
@@ -17,7 +17,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -49,7 +49,7 @@
             android:layout_marginTop="30dp"
             android:text="Sundar kannan"
             android:textAlignment="center"
-            android:textColor="#01b9f5"
+            android:textColor="#fff"
             android:textSize="36sp"
             android:textStyle="bold" />
 

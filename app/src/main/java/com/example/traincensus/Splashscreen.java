@@ -1,5 +1,4 @@
 package com.example.traincensus;
-
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -9,14 +8,16 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class Splashscreen extends AppCompatActivity {
 
     public static SharedPreferences mpref;
     public static final String Pref_Name="sp_name";
-    int SPLASH_TIME = 3000; //This is 4 seconds
+    int SPLASH_TIME = 2000;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
         mpref=getSharedPreferences(Pref_Name,MODE_PRIVATE);
@@ -40,5 +41,33 @@ public class Splashscreen extends AppCompatActivity {
             finish();
         }
     }
-}
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+}

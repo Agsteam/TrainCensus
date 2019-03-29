@@ -2,9 +2,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#FFF"
-    android:layout_height="match_parent" >
+    android:background="@drawable/bc"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
 
 
     <LinearLayout
@@ -15,11 +17,40 @@
 
         android:tag="tag_content">
 
-        <include layout="@layout/toolbar" />
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolfu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+
+            android:background="@drawable/style"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/AppTheme.PopupOverlay"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark"
+            tools:layout_editor_absoluteX="0dp">
+
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="Census Officer"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
             <LinearLayout
@@ -37,7 +68,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_weight="5.5"
                     android:text="DIVISION"
-                    android:textColor="#205cf6"
+                    android:textColor="#27116f"
                     android:textStyle="bold" />
 
                 <TextView
@@ -49,7 +80,7 @@
                     android:background="@drawable/shape1"
                     android:fontFamily="@font/open_sans_bold"
                     android:gravity="center"
-                    android:textColor="#000"
+                    android:textColor="#27116f"
                     android:textSize="14dp"
                     android:textStyle="bold" />
 
@@ -74,7 +105,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5.5"
                             android:text="SECTION"
-                            android:textColor="#205cf6"
+                            android:textColor="#27116f"
                             android:textStyle="bold" />
 
 
@@ -107,7 +138,7 @@
                             android:background="@drawable/shape1"
                             android:fontFamily="@font/open_sans_bold"
                             android:gravity="center"
-                            android:textColor="#000"
+                            android:textColor="#27116f"
                             android:textSize="14dp"
                             android:textStyle="bold" />
 
@@ -132,7 +163,7 @@
                             android:layout_margin="8dp"
                             android:layout_weight="5.5"
                             android:text="STATION"
-                            android:textColor="#205cf6"
+                            android:textColor="#27116f"
                             android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
@@ -149,7 +180,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="66dp"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical"
                         >
 
@@ -161,13 +192,10 @@
                             android:background="@drawable/shape1"
                             android:fontFamily="@font/open_sans_bold"
                             android:gravity="center"
-                            android:textColor="#000"
+                            android:textColor="#27116f"
                             android:textStyle="bold" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#dad8d8" />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -191,7 +219,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="5.5"
                             android:text="DATE"
-                            android:textColor="#205cf6"
+                            android:textColor="#27116f"
                             android:textStyle="bold" />
 
 
@@ -215,8 +243,6 @@
 
 
                         >
-
-                        It Sundar, [19.03.19 11:22]
                         <TextView
                             android:id="@+id/dateview"
                             android:layout_width="match_parent"
@@ -227,7 +253,7 @@
                             android:gravity="center"
                             android:maxLines="1"
                             android:singleLine="true"
-                            android:textColor="#000"
+                            android:textColor="#27116f"
                             android:textColorHint="#333333"
                             android:textStyle="bold" />
 
@@ -251,14 +277,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
                         android:text="Shift In"
-                        android:textColor="#205cf6"
+                        android:textColor="#27116f"
                         android:textSize="18dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/shiftinview"
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_height="40dp"
                         android:layout_margin="8dp"
                         android:layout_marginLeft="40dp"
                         android:background="@drawable/shape1"
@@ -267,7 +293,8 @@
                         android:singleLine="true"
                         android:textColor="#000"
                         android:textColorHint="#333333"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:gravity="center"/>
 
 
                 </LinearLayout>
@@ -288,23 +315,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
                         android:text="Shift Out"
-                        android:textColor="#205cf6"
+                        android:textColor="#27116f"
                         android:textSize="18dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/shiftoutview"
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_height="40dp"
                         android:layout_margin="8dp"
                         android:layout_marginLeft="40dp"
                         android:background="@drawable/shape1"
                         android:fontFamily="@font/open_sans_bold"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:textColor="#000"
-                        android:textColorHint="#333333"
-                        android:textStyle="bold" />
+                        android:textColor="#27116f"
+                        android:textStyle="bold"
+                        android:gravity="center"/>
 
 
                 </LinearLayout>
@@ -312,11 +337,13 @@
                     android:id="@+id/nextid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/signinbutton"
+                    android:background="@drawable/style"
                     android:gravity="center"
                     android:text="NEXT"
-                    android:layout_marginTop="20dp"                android:textColor="#fff"
-                    android:textSize="13dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
                     />
             </LinearLayout>
         </ScrollView>

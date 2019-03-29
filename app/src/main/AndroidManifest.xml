@@ -4,18 +4,27 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon1"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon1"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Viewcensusofficer"></activity>
-        <activity android:name=".Divassign" />
-        <activity android:name=".Fucounting" />
-        <activity android:name=".Fumessage" />
-        <activity android:name=".Welcomescreen" />
-        <activity android:name=".Login" />
-        <activity android:name=".Splashscreen">
+
+        <activity android:name=".Viewcensusofficer"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".Divassign"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".Fucounting"
+
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".Fumessage"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".Welcomescreen"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".Login"
+            android:screenOrientation="userPortrait"/>
+        <activity android:name=".Splashscreen"
+            android:screenOrientation="userPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -16,6 +16,11 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@android:color/holo_blue_dark</item>
+    </style>
+    <style name="Dial" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
 
 </resources>
