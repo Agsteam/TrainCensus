@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bc"
+    android:orientation="vertical"
+    android:gravity="right"
+    tools:context=".Nomination">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/style"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme.PopupOverlay"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <TextView
+            android:id="@+id/tohead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Census Officer Nomination"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/con1"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar1"
+        tools:layout_editor_absoluteX="8dp">
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Name"
+            android:textColor="#27116f"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.086" />
+
+
+        <EditText
+            android:id="@+id/nameview"
+            android:layout_width="326dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/buttondesign"
+            android:fontFamily="@font/open_sans_bold"
+            android:inputType="textCapWords"
+            android:textAlignment="center"
+            android:textColor="#27116f"
+            android:textColorHint="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="340dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/con1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="12dp">
+
+            <TextView
+                android:id="@+id/pfno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="PfNo"
+                android:textColor="#27116f"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+            <!--****ADDRESS LINE 2 FIELD****-->
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:paddingTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="12dp">
+
+            <TextView
+
+
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date Of Birth"
+                android:textAlignment="viewStart"
+                android:textColor="#012B74"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/dateview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#fff"
+            android:focusable="false"
+            android:hint="DD/MM/YYYY"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="#012B74"
+            android:textColorHint="#021b74"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="12dp">
+
+            <TextView
+
+
+                android:id="@+id/mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date Of Birth"
+                android:textAlignment="viewStart"
+                android:textColor="#012B74"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/mobileview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#fff"
+            android:focusable="false"
+            android:hint="Enter mobile no"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="#012B74"
+            android:textColorHint="#021b74"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="555dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/style"
+                android:gravity="center"
+                android:text="SUBMIT"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>
