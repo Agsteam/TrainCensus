@@ -365,9 +365,8 @@ public class Divassign extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
-    protected void exitByBackKey() {
-
+    protected void exitByBackKey()
+    {
         AlertDialog alertbox = new AlertDialog.Builder(this)
                 .setMessage("Do you want to exit application?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -380,7 +379,6 @@ public class Divassign extends AppCompatActivity {
                     }
                 })
                 .show();
-
     }
     public void spinsta()
     {
