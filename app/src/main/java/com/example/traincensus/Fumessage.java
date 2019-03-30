@@ -33,9 +33,9 @@ public class Fumessage extends AppCompatActivity {
         date=(TextView)findViewById(R.id.dateview);
         shin5=(TextView)findViewById(R.id.shiftinview);
         shout5=(TextView)findViewById(R.id.shiftoutview);
-        div.setText(getIntent().getStringExtra("div"));
+        div.setText(getIntent().getStringExtra("div").toUpperCase());
         sec.setText(getIntent().getStringExtra("sec"));
-        sta.setText(getIntent().getStringExtra("sta"));
+        sta.setText(getIntent().getStringExtra("sta").toUpperCase());
         date.setText(getIntent().getStringExtra("dutydate"));
         shin5.setText(getIntent().getStringExtra("shin"));
         shout5.setText(getIntent().getStringExtra("shout"));

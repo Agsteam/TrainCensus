@@ -32,7 +32,7 @@ public class Mainscreen extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                loginlable="Divisional Admin";
+                loginlable="Division Admin";
                 openLogin();
             }
         });

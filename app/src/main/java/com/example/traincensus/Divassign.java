@@ -81,7 +81,7 @@ public class Divassign extends AppCompatActivity
         namestaff=findViewById(R.id.nameview);
         pfnostaff=findViewById(R.id.Pfno);
         calendar1.add(Calendar.DATE, 0);
-        div.setText(Splashscreen.mpref.getString("Division",""));
+        div.setText(Splashscreen.mpref.getString("Division","").toUpperCase());
         divsummit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -340,9 +340,6 @@ public class Divassign extends AppCompatActivity
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
-
-            //moveTaskToBack(false);
-
             return true;
         }
         return super.onKeyDown(keyCode, event);
@@ -406,7 +403,7 @@ public class Divassign extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
             {
-                divStation= valueOf(spinsta.getSelectedItem());
+                divStation= valueOf(spinsta.getSelectedItem()).toUpperCase();
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView)

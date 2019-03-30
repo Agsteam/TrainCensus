@@ -49,6 +49,14 @@ public class Login extends AppCompatActivity
         dob1=(EditText)findViewById(R.id.dob);
         singin1 = (Button) findViewById(R.id.signin);
         lprogress.setVisibility(View.GONE);
+        if (hdloginlable.getText().toString().equals("Division Admin"))
+        {
+            a = "Div";
+        }
+        else if (hdloginlable.getText().toString().equals("Census Officer"))
+        {
+            a = "field";
+        }
         singin1.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -57,14 +65,6 @@ public class Login extends AppCompatActivity
                 lprogress.setVisibility(View.VISIBLE);
                 loginpf = pf1.getText().toString().trim();
                 loginpass = dob1.getText().toString().trim();
-                if (hdloginlable.getText().toString().equals("Divisional Admin"))
-                {
-                    a = "Div";
-                }
-                else if (hdloginlable.getText().toString().equals("Census Officer"))
-                {
-                    a = "field";
-                }
                 if (loginpf.length() > 0 && loginpass.length() > 0)
                 {
                     database1.collection("Login").addSnapshotListener(new EventListener<QuerySnapshot>()
