@@ -37,7 +37,7 @@
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Census Officer"
+            android:text="Field Officer"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="22sp"
@@ -449,12 +449,12 @@
                                 android:background="@drawable/shape2"
                                 android:ems="10"
                                 android:hint="Enter coach no"
-                                android:textColorHint="#000"
-                                android:inputType="text"
+                                android:inputType="number"
                                 android:paddingLeft="5dp"
                                 android:scrollbarAlwaysDrawHorizontalTrack="true"
                                 android:textColor="#27116f"
 
+                                android:textColorHint="#000"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.478"
                                 app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -666,7 +666,7 @@
                             android:background="@drawable/style"
                             android:fontFamily="@font/open_sans_bold"
                             android:gravity="center"
-                            android:text="@string/submits"
+                            android:text="Confirm"
                             android:textColor="#fff"
                             android:textSize="13sp" />
 

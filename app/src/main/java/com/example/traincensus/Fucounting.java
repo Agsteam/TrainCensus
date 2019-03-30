@@ -170,11 +170,11 @@ public class Fucounting extends AppCompatActivity
                     float z = (float) occ1 / (float) cc1;
                     average = (int) (z * 100);
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-                    alertDialogBuilder.setTitle("Recheck");
+                    alertDialogBuilder.setTitle("Confirm");
                     alertDialogBuilder
                             .setMessage(show(a))
                             .setCancelable(false)
-                            .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                            .setPositiveButton("Confirm", new DialogInterface.OnClickListener()
                             {
                                 public void onClick(DialogInterface dialog, int id)
                                 {
@@ -202,7 +202,7 @@ public class Fucounting extends AppCompatActivity
                                     return;
                                 }
                             })
-                            .setNegativeButton("No", new DialogInterface.OnClickListener()
+                            .setNegativeButton("Recount", new DialogInterface.OnClickListener()
                             {
                                 public void onClick(DialogInterface dialog, int id)
                                 {
@@ -869,7 +869,7 @@ public class Fucounting extends AppCompatActivity
     public String show(String a)
     {
         aq=gsa1.getText().toString()+wgscza1.getText().toString().trim()+gsrda1.getText().toString().trim()+gsra1.getText().toString().trim()+gslrda1.getText().toString().trim()+gslra1.getText().toString().trim();
-        a = "Train No :" + listView.getText().toString()+ " " + "  Carrying Capacity :" + ccy1.getText().toString() + " " +"  Total :"+total.getText().toString()+"  Percentage  :"+average;
+        a = "Train No :" + listView.getText().toString()+ " " + "  Carrying Capacity :" + ccy1.getText().toString() + " " +"  Actual Occupied :"+total.getText().toString()+"  Percentage  :"+average;
         return (a);
     }
 }

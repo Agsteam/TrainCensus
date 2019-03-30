@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity
 {
     ProgressBar lprogress;
     EditText pf1, dob1;
-    TextView hdloginlable;
+    TextView hdloginlable,ins;
     Button singin1;
     String loginpf,loginpass,a,name="",actype,divname;
     FirebaseFirestore database1=FirebaseFirestore.getInstance();
@@ -44,6 +44,7 @@ public class Login extends AppCompatActivity
         setContentView(R.layout.activity_login);
         lprogress=(ProgressBar)findViewById(R.id.progressBar3);
         hdloginlable = (TextView) findViewById(R.id.textView5);
+        ins=(TextView)findViewById(R.id.textView6);
         hdloginlable.setText(getIntent().getStringExtra("lable"));
         pf1=(EditText)findViewById(R.id.pfno);
         dob1=(EditText)findViewById(R.id.dob);
@@ -52,10 +53,17 @@ public class Login extends AppCompatActivity
         if (hdloginlable.getText().toString().equals("Division Admin"))
         {
             a = "Div";
+            pf1.setHint("USER ID");
+            dob1.setHint("PASSWORD");
+            ins.setVisibility(View.VISIBLE);
+            ins.setText("(Password will be issued by HQ Admin)");
+
         }
         else if (hdloginlable.getText().toString().equals("Census Officer"))
         {
             a = "field";
+            pf1.setHint("USER ID IS YOUR PF NUMBER");
+            dob1.setHint("PASSWORD IS YOUR MOBILE NUMBER");
         }
         singin1.setOnClickListener(new View.OnClickListener()
         {
