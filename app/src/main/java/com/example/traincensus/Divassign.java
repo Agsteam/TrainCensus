@@ -28,6 +28,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 
 import com.google.firebase.firestore.CollectionReference;
@@ -49,106 +50,112 @@ import java.util.Locale;
 import static java.lang.String.valueOf;
 
 
-public class Divassign extends AppCompatActivity
-{
-    List<String> list,list1;
-    TextView  shiftin, shiftout,div;
+public class Divassign extends AppCompatActivity {
+    List<String> list, list1;
+    TextView shiftin, shiftout, div;
     TimePickerDialog timePickerDialog;
-    Spinner spinsec,spinsta;
-    EditText date11,namestaff,pfnostaff;
-    String divSection,divStation;
-    FirebaseFirestore database1=FirebaseFirestore.getInstance();
-    FirebaseFirestore database2=FirebaseFirestore.getInstance();
+    Spinner spinsec, spinsta;
+    Button divsummit;
+    EditText date11, namestaff, pfnostaff;
+    String divSection, divStation, a,a1;
+    FirebaseFirestore database1 = FirebaseFirestore.getInstance();
+    FirebaseFirestore database2 = FirebaseFirestore.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference notebookRef = db.collection("Login");
-    public Calendar calendar1=Calendar.getInstance();
-    Button divsummit;
+    public Calendar calendar1 = Calendar.getInstance();
     Date date5;
-    int flag=0;
-    String a;
+    int flag, flag1;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_divassign);
         date11 = findViewById(R.id.dateview);
         shiftin = findViewById(R.id.shiftinview);
         shiftout = findViewById(R.id.shiftoutview);
-        spinsec= findViewById(R.id.Secname);
-        spinsta=findViewById(R.id.Stationview);
-        div=findViewById(R.id.divnameview);
-        divsummit=findViewById(R.id.submit);
-        namestaff=findViewById(R.id.nameview);
-        pfnostaff=findViewById(R.id.Pfno);
+        spinsec = findViewById(R.id.Secname);
+        spinsta = findViewById(R.id.Stationview);
+        div = findViewById(R.id.divnameview);
+        divsummit = findViewById(R.id.submit);
+        namestaff = findViewById(R.id.nameview);
+        pfnostaff = findViewById(R.id.Pfno);
+        Toolbar toolbar = findViewById(R.id.toolda);
+        TextView dtext = (TextView) toolbar.findViewById(R.id.dividshow);
         calendar1.add(Calendar.DATE, 0);
-        div.setText(Splashscreen.mpref.getString("Division","").toUpperCase());
+        div.setText(Splashscreen.mpref.getString("Division", "").toUpperCase());
+        if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("PALAKKAD"))
+            dtext.setText("DIV ADMIN - PGT");
+        if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("CHENNAI"))
+            dtext.setText("DIV ADMIN - MAS");
+        if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("TRICHY"))
+            dtext.setText("DIV ADMIN - TPJ");
+        if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("MADURAI"))
+            dtext.setText("DIV ADMIN - MDU");
+        if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("SALEM"))
+            dtext.setText("DIV ADMIN - SA");
+        if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("TRIVANDRUM"))
+            dtext.setText("DIV ADMIN - TVC");
         divsummit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                flag=0;
+            public void onClick(View v) {
+                flag = 0;
+                flag1 = 0;
                 SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-                try {date5 = format.parse(date11.getText().toString());
-                } catch (ParseException e) {e.printStackTrace();}
-                if(namestaff.getText().toString().equals(""))
-                {flag=1;
-                    namestaff.setError(getString(R.string.a));}
-                if(pfnostaff.getText().toString().equals(""))
-                {flag=1;
-                    pfnostaff.setError(getString(R.string.a1));}
-                if(date11.getText().toString().equals(""))
-                {flag=1;
-                    date11.setError(getString(R.string.a2));}
-                if(shiftin.getText().toString().equals(""))
-                {flag=1;
-                    shiftin.setError(getString(R.string.a3));}
-                if(shiftout.getText().toString().equals(""))
-                {flag=1;
-                    shiftout.setError(getString(R.string.a4));}
-                if(flag==0) {
-
-
+                try {
+                    date5 = format.parse(date11.getText().toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                if (namestaff.getText().toString().equals("")) {
+                    flag = 1;
+                    namestaff.setError(getString(R.string.a));
+                }
+                if (pfnostaff.getText().toString().equals("")) {
+                    flag = 1;
+                    pfnostaff.setError(getString(R.string.a1));
+                }
+                if (date11.getText().toString().equals("")) {
+                    flag = 1;
+                    date11.setError(getString(R.string.a2));
+                }
+                if (shiftin.getText().toString().equals("")) {
+                    flag = 1;
+                    shiftin.setError(getString(R.string.a3));
+                }
+                if (shiftout.getText().toString().equals("")) {
+                    flag = 1;
+                    shiftout.setError(getString(R.string.a4));
+                }
+                if (flag == 0) {
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Divassign.this);
-                    alertDialogBuilder.setTitle(R.string.a6);
+                    alertDialogBuilder.setTitle("Confirm Nominated Details");
                     alertDialogBuilder
                             .setMessage(show(a))
                             .setCancelable(false)
-                            .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                            {
-                                public void onClick(DialogInterface dialog, int id)
-                                {
+                            .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
                                     FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(), pfnostaff.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(), pfnostaff.getText().toString().trim(), "field", divSection, date5);
                                     notebookRef.add(note);
-                                    Toast.makeText(Divassign.this,"Record Saved Successfully",Toast.LENGTH_LONG).show();
-                                    namestaff.setText("");
-                                    pfnostaff.setText("");
-                                    shiftin.setText(getString(R.string.a7));
-                                    shiftout.setText(getString(R.string.a8));
-                                    date11.setText(getString(R.string.a9));
-                                    Intent intent=new Intent(Divassign.this,Divassign.class);
-                                    startActivity(intent);
+                                    flag1 = 1;
+                                    reasign();
+                                    Toast.makeText(Divassign.this, "Record Saved Successfully", Toast.LENGTH_LONG).show();
                                 }
                             })
-                            .setNegativeButton("No", new DialogInterface.OnClickListener()
-                            {
-                                public void onClick(DialogInterface dialog, int id)
-                                {
+                            .setNegativeButton("Reassign", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();
                                 }
                             });
                     AlertDialog alertDialog = alertDialogBuilder.create();
                     alertDialog.show();
-                }
-                else
-                    Toast.makeText(Divassign.this,getString(R.string.a10),Toast.LENGTH_SHORT).show();
+                } else
+                    Toast.makeText(Divassign.this, getString(R.string.a10), Toast.LENGTH_SHORT).show();
             }
         });
-        final DatePickerDialog.OnDateSetListener date12 = new DatePickerDialog.OnDateSetListener()
-        {
+        final DatePickerDialog.OnDateSetListener date12 = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth)
-            {
+                                  int dayOfMonth) {
                 calendar1.set(Calendar.YEAR, year);
                 calendar1.set(Calendar.MONTH, monthOfYear);
                 calendar1.set(Calendar.DAY_OF_MONTH, dayOfMonth);
@@ -161,29 +168,24 @@ public class Divassign extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 date11.setError(null);
-                DatePickerDialog datePickerDialog = new DatePickerDialog(Divassign.this, date12,Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(Divassign.this, date12, Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
                 datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTimeInMillis());
                 datePickerDialog.show();
 
 
             }
         });
-        database1.collection(Splashscreen.mpref.getString("Division","").toLowerCase()).addSnapshotListener(new EventListener<QuerySnapshot>()
-        {
+        database1.collection(Splashscreen.mpref.getString("Division", "").toLowerCase()).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
-            public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e)
-            {
+            public void onEvent(QuerySnapshot queryDocumentSnapshots, FirebaseFirestoreException e) {
                 list = new ArrayList<String>();
-                for (DocumentSnapshot doc : queryDocumentSnapshots)
-                {
+                for (DocumentSnapshot doc : queryDocumentSnapshots) {
                     String pfvali = doc.getString("section");
                     list.add(pfvali);
                 }
-                Divassign.this.runOnUiThread(new Runnable()
-                {
+                Divassign.this.runOnUiThread(new Runnable() {
                     @Override
-                    public void run()
-                    {
+                    public void run() {
                         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(Divassign.this, android.R.layout.simple_spinner_item, list);
                         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         spinsec.setAdapter(dataAdapter);
@@ -192,102 +194,86 @@ public class Divassign extends AppCompatActivity
                 });
             }
         });
-        spinsec.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            @Override public void onItemSelected (AdapterView < ? > parentView, View
-                    selectedItemView,int position, long id)
-            {
+        spinsec.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View
+                    selectedItemView, int position, long id) {
                 divSection = valueOf(spinsec.getSelectedItem());
                 spinsta();
             }
-            @Override public void onNothingSelected (AdapterView < ? > adapterView)
-            {
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
-        shiftin.setOnClickListener(new View.OnClickListener()
-        {
+        shiftin.setOnClickListener(new View.OnClickListener() {
             Calendar calendar = Calendar.getInstance();
             int hour = calendar.get(calendar.HOUR);
             int minute = calendar.get(calendar.MINUTE);
+
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 shiftin.setError(null);
-                timePickerDialog = new TimePickerDialog(Divassign.this, new TimePickerDialog.OnTimeSetListener()
-                {
+                timePickerDialog = new TimePickerDialog(Divassign.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
-                    public void onTimeSet(TimePicker timePicker, int i, int i2)
-                    {
+                    public void onTimeSet(TimePicker timePicker, int i, int i2) {
                         String am_pm;
-                        if (i < 12)
-                        {
+                        if (i < 12) {
                             am_pm = "AM";
-                            if(i2<10)
-                                shiftin.setText(i + ":" +"0"+ i2 + am_pm);
+                            if (i2 < 10)
+                                shiftin.setText(i + ":" + "0" + i2 + am_pm);
                             else
                                 shiftin.setText(i + ":" + i2 + am_pm);
-                        }
-                        else if (i == 12)
-                        {
+                        } else if (i == 12) {
                             am_pm = "PM";
-                            if(i2<10)
-                                shiftin.setText(i + ":"+"0" + i2 + am_pm);
+                            if (i2 < 10)
+                                shiftin.setText(i + ":" + "0" + i2 + am_pm);
                             else
                                 shiftin.setText(i + ":" + i2 + am_pm);
-                        }
-                        else
-                        {
+                        } else {
                             am_pm = "PM";
-                            if(i2<10)
-                                shiftin.setText((i=(i%12)) + ":"+"0" + i2 + am_pm);
+                            if (i2 < 10)
+                                shiftin.setText((i = (i % 12)) + ":" + "0" + i2 + am_pm);
                             else
-                                shiftin.setText((i=(i%12)) + ":" + i2 + am_pm);
+                                shiftin.setText((i = (i % 12)) + ":" + i2 + am_pm);
                         }
                     }
                 }, hour, minute, true);
                 timePickerDialog.show();
             }
         });
-        shiftout.setOnClickListener(new View.OnClickListener()
-        {
+        shiftout.setOnClickListener(new View.OnClickListener() {
             Calendar calendar = Calendar.getInstance();
             int hour = calendar.get(calendar.HOUR);
             int minute = calendar.get(calendar.MINUTE);
+
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 shiftout.setError(null);
-                timePickerDialog = new TimePickerDialog(Divassign.this, new TimePickerDialog.OnTimeSetListener()
-                {
+                timePickerDialog = new TimePickerDialog(Divassign.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
 
 
-                    public void onTimeSet(TimePicker timePicker, int i, int i1)
-                    {
+                    public void onTimeSet(TimePicker timePicker, int i, int i1) {
                         String am_pm;
-                        if (i < 12)
-                        {
+                        if (i < 12) {
                             am_pm = "AM";
-                            if(i1<10)
-                                shiftout.setText(i + ":"+"0" + i1 + am_pm);
+                            if (i1 < 10)
+                                shiftout.setText(i + ":" + "0" + i1 + am_pm);
                             else
                                 shiftout.setText(i + ":" + i1 + am_pm);
-                        }
-                        else if (i == 12)
-                        {
+                        } else if (i == 12) {
                             am_pm = "PM";
-                            if(i1<10)
-                                shiftout.setText(i + ":" +"0"+ i1 + am_pm);
+                            if (i1 < 10)
+                                shiftout.setText(i + ":" + "0" + i1 + am_pm);
                             else
                                 shiftout.setText(i + ":" + i1 + am_pm);
-                        }
-                        else
-                        {
+                        } else {
                             am_pm = "PM";
-                            if(i1<10)
-                                shiftout.setText((i=(i%12)) + ":"+"0" + i1 + am_pm);
+                            if (i1 < 10)
+                                shiftout.setText((i = (i % 12)) + ":" + "0" + i1 + am_pm);
                             else
-                                shiftout.setText((i=(i%12)) + ":" + i1 + am_pm);
+                                shiftout.setText((i = (i % 12)) + ":" + i1 + am_pm);
                         }
                     }
                 }, hour, minute, true);
@@ -295,11 +281,9 @@ public class Divassign extends AppCompatActivity
             }
         });
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener()
-        {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(Divassign.this, Viewcensusofficer.class);
                 startActivity(intent);
                 finish();
@@ -307,6 +291,7 @@ public class Divassign extends AppCompatActivity
             }
         });
     }
+
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -337,6 +322,42 @@ public class Divassign extends AppCompatActivity
     protected void onDestroy() {
         super.onDestroy();
     }
+
+    public void reasign()
+    {
+        if(flag1==1)
+        {
+            AlertDialog.Builder alertDialogBuilder1 = new AlertDialog.Builder(Divassign.this);
+            alertDialogBuilder1.setTitle("Do you Want to Nominate Same Officer");
+            alertDialogBuilder1
+                    .setMessage(show1(a1))
+                    .setCancelable(false)
+                    .setPositiveButton("Confirm", new DialogInterface.OnClickListener()
+                    {
+                        public void onClick(DialogInterface dialog, int id)
+                        {
+                            date11.setText("DD/MM/YYYY");
+                            shiftin.setText("HH:MM");
+                            shiftout.setText("HH:MM");
+
+                        }
+                    })
+                    .setNegativeButton("Reassign", new DialogInterface.OnClickListener()
+                    {
+                        public void onClick(DialogInterface dialog, int id)
+                        {
+                            namestaff.setText("");
+                            pfnostaff.setText("");
+                            date11.setText("DD/MM/YYYY");
+                            shiftin.setText("HH:MM");
+                            shiftout.setText("HH:MM");
+                            dialog.cancel();
+                        }
+                    });
+            AlertDialog alertDialog1 = alertDialogBuilder1.create();
+            alertDialog1.show();
+        }
+    }
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
@@ -350,19 +371,11 @@ public class Divassign extends AppCompatActivity
         AlertDialog alertbox = new AlertDialog.Builder(this)
                 .setMessage("Do you want to exit application?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-
-                    // do something when the button is clicked
                     public void onClick(DialogInterface arg0, int arg1) {
-
                         finish();
-                        //close();
-
-
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
-
-                    // do something when the button is clicked
                     public void onClick(DialogInterface arg0, int arg1) {
                     }
                 })
@@ -419,7 +432,12 @@ public class Divassign extends AppCompatActivity
     }
     public String show(String a)
     {
-        a = "Name :" + namestaff.getText().toString()+ " " + "  Pf No :" + pfnostaff.getText().toString() + " " +"  Date :"+date11.getText().toString()+"  Shift In  :"+shiftin.getText().toString()+"  Shift Out :"+shiftout.getText().toString()+"  Station :"+divStation+"  Section :"+divSection;
+        a = "Name :" + namestaff.getText().toString()+ '\n' + "  Pf No :" + pfnostaff.getText().toString() + '\n' +"Section :"+divSection+'\n'+"Station :"+divStation+'\n'+'\n'+"Date :"+date11.getText().toString()+'\n'+"Shift In  :"+shiftin.getText().toString()+"  Shift Out :"+shiftout.getText().toString();
         return (a);
+    }
+    public String show1(String a1)
+    {
+        a1 = "Name :" + namestaff.getText().toString()+ '\n' + "  Pf No :" + pfnostaff.getText().toString();
+        return (a1);
     }
 }

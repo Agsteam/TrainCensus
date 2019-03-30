@@ -34,7 +34,7 @@ import java.util.Locale;
 
 public class Welcomescreen extends AppCompatActivity
 {       ProgressBar p;
-        TextView ed;
+        TextView ed,op,di;
         String formattedDate;
         String name2,actype2,sta,div="",sec,shin,shout,m;
         Date dutydate ;
@@ -46,10 +46,17 @@ public class Welcomescreen extends AppCompatActivity
         {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_welcomescreen);
+                actype2=Splashscreen.mpref.getString("Accesstype","");
                 ed=(TextView) findViewById(R.id.name);
+                op=(TextView)findViewById(R.id.textView4);
+                di=(TextView)findViewById(R.id.name1);
+                if(actype2.equals("Div"))
+                {
+                        op.setText("Opening your dashboard");
+                        di.setText("DIV ADMIN");
+                }
                 name2=Splashscreen.mpref.getString("Name","");
                 ed.setText(name2);
-                actype2=Splashscreen.mpref.getString("Accesstype","");
                 cudate = Calendar.getInstance().getTime();
                 SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
                 formattedDate = df.format(cudate);
@@ -95,9 +102,7 @@ public class Welcomescreen extends AppCompatActivity
                                                         {
                                                                 Log.d("sun", "error" + e.getMessage());
                                                         }
-
-
-else
+                                                        else
                                                         {
                                                                 for (DocumentSnapshot doc : queryDocumentSnapshots)
                                                                 {

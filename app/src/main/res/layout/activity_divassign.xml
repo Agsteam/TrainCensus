@@ -32,6 +32,7 @@
 
 
         <TextView
+            android:id="@+id/dividshow"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:text="Division Officer"
@@ -323,7 +324,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/open_sans_bold"
-                                android:text="Fill Officer Details"
+                                android:text="Census Officer Nomination"
                                 android:textAlignment="center"
                                 android:textStyle="bold"
                                 android:textColor="#27116f"
@@ -419,7 +420,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/open_sans_bold"
-                                android:text="PfNo"
+                                android:text="PF No:"
                                 android:textStyle="bold"
                                 android:textColor="#27116f"
                                 android:textSize="18sp"
@@ -484,7 +485,7 @@
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Time"
+                                android:text="Census Shift Nomination"
                                 android:layout_gravity="center"
                                 android:textAlignment="center"
                                 android:textStyle="bold"
@@ -495,140 +496,6 @@
 
                         </LinearLayout>
                     </LinearLayout>
-
-
-                    <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="12dp">
-
-                            <TextView
-                                android:id="@+id/shiftin"
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Shift in"
-                                android:textAlignment="viewStart"
-                                android:textStyle="bold"
-                                android:textColor="#27116f"
-                                android:textSize="18sp"
-                                 />
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-
-                            >
-
-                            <TextView
-                                android:id="@+id/shiftinview"
-                                android:layout_width="match_parent"
-                                android:layout_height="30dp"
-                                android:background="@drawable/buttondesign"
-                                android:hint="7.00am"
-                                android:inputType="number"
-                                android:maxLines="1"
-                                android:textAlignment="center"
-                                android:textColor="#012B74"
-                                android:textColorHint="#012B74"
-                                android:textSize="18sp"
-                                android:textStyle="bold"
-                                 />
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="12dp">
-
-                            <TextView
-
-
-                                android:id="@+id/shiftout"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Shift out"
-                                android:textAlignment="viewStart"
-                                android:textColor="#012B74"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-
-                            >
-
-                            <TextView
-                                android:id="@+id/shiftoutview"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/buttondesign"
-                                android:hint="7.00pm"
-                                android:inputType="number"
-                                android:maxLines="1"
-                                android:textAlignment="center"
-                                android:textColor="#012B74"
-                                android:textColorHint="#012B74"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -669,7 +536,142 @@
                             android:textColorHint="#021b74"
                             android:textSize="18sp"
                             android:textStyle="bold"
-                            android:focusable="false"/>
+                            android:focusable="false"
+                            android:inputType="date"/>
+                    </LinearLayout>
+
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/shiftin"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Shift Start"
+                                android:textAlignment="viewStart"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textSize="18sp"
+                                 />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            >
+
+                            <TextView
+                                android:id="@+id/shiftinview"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/buttondesign"
+                                android:hint="HH:MM"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:textAlignment="center"
+                                android:textColor="#012B74"
+                                android:textColorHint="#012B74"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                 />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+
+
+                                android:id="@+id/shiftout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Shift End
+"
+                                android:textAlignment="viewStart"
+                                android:textColor="#012B74"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            >
+
+                            <TextView
+                                android:id="@+id/shiftoutview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/buttondesign"
+                                android:hint="HH:MM"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:textAlignment="center"
+                                android:textColor="#012B74"
+                                android:textColorHint="#012B74"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
                     </LinearLayout>
 
 

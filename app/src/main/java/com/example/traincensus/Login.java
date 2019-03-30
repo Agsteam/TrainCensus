@@ -100,6 +100,7 @@ public class Login extends AppCompatActivity
                                 if(!name.equals("")&& !a.equals(actype))
                                 {
                                     Toast.makeText(Login.this,"Your not authorised to login "+hdloginlable.getText().toString(),Toast.LENGTH_SHORT).show();
+                                    lprogress.setVisibility(View.GONE);
                                 }
                                 else if (!name.equals(""))
 
