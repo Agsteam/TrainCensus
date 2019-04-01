@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -95,7 +96,6 @@ public class Fucounting extends AppCompatActivity
         g6c = (EditText) findViewById(R.id.wgsczv);
         total = (EditText) findViewById(R.id.tc);
         ccy1 = (TextView) findViewById(R.id.ccy);
-
         listView = (AutoCompleteTextView) findViewById(R.id.tno);
         tload = (ProgressBar) findViewById(R.id.progressBar2);
         gsa1=(EditText)findViewById(R.id.gsa);
@@ -106,7 +106,6 @@ public class Fucounting extends AppCompatActivity
         gslra1=(EditText)findViewById(R.id.gslra);
         super.onStart();
         station=getIntent().getStringExtra("sta");
-
         saverecord.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -115,8 +114,6 @@ public class Fucounting extends AppCompatActivity
                 todayAsString = getIntent().getStringExtra("dutydate");
                 if (total.getText().toString().equals(""))
                 {
-
-
                     total.setError("please fill Total Count");
                 }
                 else
@@ -145,19 +142,19 @@ public class Fucounting extends AppCompatActivity
                         g6c.setError("please fill Number of Coach and Coach Type");
                     }
                 }
-
-                if((gsa1.getText().toString().equals(""))||(wgscza1.getText().toString().trim().equals(""))||(gsrda1.getText().toString().trim().equals(""))||(gsra1.getText().toString().trim().equals(""))||(gslrda1.getText().toString().trim().equals(""))||(gslra1.getText().toString().trim().equals("")))
-            {
-                gsa1.setError("Please Enter Coach Number");
-                wgscza1.setError("Please Enter Coach Number");
-                gsrda1.setError("Please Enter Coach Number");
-                gsra1.setError("Please Enter Coach Number");
-                gslrda1.setError("Please Enter Coach Number");
-                gslra1.setError("Please Enter Coach Number");
-            }
-
-
-
+                aq=gsa1.getText().toString()+wgscza1.getText().toString().trim()+gsrda1.getText().toString().trim()+gsra1.getText().toString().trim()+gslrda1.getText().toString().trim()+gslra1.getText().toString().trim();
+                if(aq.trim().equals(""))
+                {
+                   if((gsa1.getText().toString().equals(""))||(wgscza1.getText().toString().trim().equals(""))||(gsrda1.getText().toString().trim().equals(""))||(gsra1.getText().toString().trim().equals(""))||(gslrda1.getText().toString().trim().equals(""))||(gslra1.getText().toString().trim().equals("")))
+                   {
+                    gsa1.setError("Please Enter Coach Number");
+                    wgscza1.setError("Please Enter Coach Number");
+                    gsrda1.setError("Please Enter Coach Number");
+                    gsra1.setError("Please Enter Coach Number");
+                    gslrda1.setError("Please Enter Coach Number");
+                    gslra1.setError("Please Enter Coach Number");
+                   }
+                }
                 else
                 {
                     String t = ccy1.getText().toString();
@@ -387,8 +384,6 @@ public class Fucounting extends AppCompatActivity
             {
             }
         });
-
-
         g3c.addTextChangedListener(new TextWatcher()
         {
             @Override
@@ -468,8 +463,6 @@ public class Fucounting extends AppCompatActivity
             public void beforeTextChanged(CharSequence s, int start, int count, int after)
             {
             }
-
-
             @Override
             public void afterTextChanged(Editable s)
             {
@@ -652,13 +645,6 @@ public class Fucounting extends AppCompatActivity
                 return true;
         }
         return super.onOptionsItemSelected(item);}
-
-
-
-
-
-
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -706,7 +692,7 @@ public class Fucounting extends AppCompatActivity
                     if(trainDetailsResponse.getTotal()==0)Toast.makeText(Fucounting.this,"Next Four Hours No trains",Toast.LENGTH_SHORT).show();
                     for(int i=0;i<trainDetailsResponse.getTotal();i++)
                     {
-                        String trainname = trainDetailsResponse.getTrains().get(i).getNumber()+"\t"+trainDetailsResponse.getTrains().get(i).getName();
+                        String trainname = trainDetailsResponse.getTrains().get(i).getNumber()+'\t'+trainDetailsResponse.getTrains().get(i).getName();
                         list.add(trainname);
                     }
                     Fucounting.this.runOnUiThread(new Runnable()
@@ -868,7 +854,6 @@ public class Fucounting extends AppCompatActivity
     }
     public String show(String a)
     {
-        aq=gsa1.getText().toString()+wgscza1.getText().toString().trim()+gsrda1.getText().toString().trim()+gsra1.getText().toString().trim()+gslrda1.getText().toString().trim()+gslra1.getText().toString().trim();
         a = "Train No :" + listView.getText().toString()+ " " + "  Carrying Capacity :" + ccy1.getText().toString() + " " +"  Actual Occupied :"+total.getText().toString()+"  Percentage  :"+average;
         return (a);
     }

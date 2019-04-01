@@ -39,7 +39,6 @@ public class Fumessage extends AppCompatActivity {
         date.setText(getIntent().getStringExtra("dutydate"));
         shin5.setText(getIntent().getStringExtra("shin"));
         shout5.setText(getIntent().getStringExtra("shout"));
-        Log.e("sun",""+getIntent().getStringExtra("cudate")+getIntent().getStringExtra("dutydate"));
         if(getIntent().getStringExtra("cudate").equals(getIntent().getStringExtra("dutydate")))
             count.setVisibility(View.VISIBLE);
         count.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +47,7 @@ public class Fumessage extends AppCompatActivity {
                 Intent intent=new Intent(Fumessage.this,Fucounting.class);
                 intent.putExtra("div",getIntent().getStringExtra("div"));
                 intent.putExtra("sta",getIntent().getStringExtra("sta"));
+                intent.putExtra("dutydate",getIntent().getStringExtra("dutydate"));
                 startActivity(intent);
                 finish();
             }

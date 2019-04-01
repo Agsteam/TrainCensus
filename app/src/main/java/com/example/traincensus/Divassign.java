@@ -134,11 +134,7 @@ public class Divassign extends AppCompatActivity {
                             .setCancelable(false)
                             .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
-                                    FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(), pfnostaff.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(), pfnostaff.getText().toString().trim(), "field", divSection, date11.getText().toString());
-                                    notebookRef.add(note);
-                                    flag1 = 1;
-                                    reasign();
-                                    Toast.makeText(Divassign.this, "Record Saved Successfully", Toast.LENGTH_LONG).show();
+                                    tamil();
                                 }
                             })
                             .setNegativeButton("Reassign", new DialogInterface.OnClickListener() {
@@ -426,5 +422,13 @@ public class Divassign extends AppCompatActivity {
     {
         a1 = "Name :" + namestaff.getText().toString()+ '\n' + "  Pf No :" + pfnostaff.getText().toString();
         return (a1);
+    }
+    public void tamil()
+    {
+        FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(), pfnostaff.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(), pfnostaff.getText().toString().trim(), "field", divSection, date11.getText().toString());
+        notebookRef.add(note);
+        flag1 = 1;
+        reasign();
+        Toast.makeText(Divassign.this, "Record Saved Successfully", Toast.LENGTH_LONG).show();
     }
 }
