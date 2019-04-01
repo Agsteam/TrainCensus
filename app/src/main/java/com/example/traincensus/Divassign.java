@@ -134,7 +134,7 @@ public class Divassign extends AppCompatActivity {
                             .setCancelable(false)
                             .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
-                                    FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(), pfnostaff.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(), pfnostaff.getText().toString().trim(), "field", divSection, date5);
+                                    FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(), pfnostaff.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(), pfnostaff.getText().toString().trim(), "field", divSection, date11.getText().toString());
                                     notebookRef.add(note);
                                     flag1 = 1;
                                     reasign();
@@ -171,8 +171,6 @@ public class Divassign extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(Divassign.this, date12, Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH);
                 datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTimeInMillis());
                 datePickerDialog.show();
-
-
             }
         });
         database1.collection(Splashscreen.mpref.getString("Division", "").toLowerCase()).addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -280,16 +278,6 @@ public class Divassign extends AppCompatActivity {
                 timePickerDialog.show();
             }
         });
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Divassign.this, Viewcensusofficer.class);
-                startActivity(intent);
-                finish();
-
-            }
-        });
     }
 
     @Override
@@ -372,6 +360,7 @@ public class Divassign extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
                         finish();
+                        Intent intent=new Intent(Divassign.this,Homepage.class);
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {

@@ -8,14 +8,14 @@ import java.util.List;
 public class FirestoreDivision
 {
         private String Name,Pfno,Station,Shiftin,Shiftout,DOB,Accestype,Division,Section;
-        private Date Date1;
+        private String Date1;
 
         public FirestoreDivision()
         {
             //public no-arg constructor needed
         }
 
-    public FirestoreDivision(String Division,String Name,String Pfno,String Station,String Shiftin,String Shiftout,String DOB,String Accestype,String Section,Date Date1)
+    public FirestoreDivision(String Division,String Name,String Pfno,String Station,String Shiftin,String Shiftout,String DOB,String Accestype,String Section,String Date1)
     {
         this.Division=Division;
         this.Name=Name;
@@ -65,7 +65,7 @@ public class FirestoreDivision
         Section = section;
     }
 
-    public void setDate1(Date date1) {
+    public void setDate1(String date1) {
         Date1 = date1;
     }
 
@@ -114,7 +114,7 @@ public class FirestoreDivision
         return Section;
     }
 
-    public Date getDate1()
+    public String getDate1()
     {
         return Date1;
     }

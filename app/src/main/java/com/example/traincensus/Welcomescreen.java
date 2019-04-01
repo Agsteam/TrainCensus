@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -36,7 +37,7 @@ public class Welcomescreen extends AppCompatActivity
 {       ProgressBar p;
         TextView ed,op,di;
         String formattedDate;
-        String name2,actype2,sta,div="",sec,shin,shout,m;
+        String name2,actype2,sta,div="",sec,shin,shout,m,validate2;
         Date dutydate ;
         int SPLASH_TIME = 3000;
         Date cudate,validate1,v,v1;
@@ -51,7 +52,7 @@ public class Welcomescreen extends AppCompatActivity
                 op=(TextView)findViewById(R.id.textView4);
                 di=(TextView)findViewById(R.id.name1);
                 if(actype2.equals("Div"))
-                {
+                {        di.setVisibility(View.VISIBLE);
                         op.setText("Opening your dashboard");
                         di.setText("DIV ADMIN");
                 }
@@ -77,7 +78,7 @@ public class Welcomescreen extends AppCompatActivity
                 try {  v=dateFormat.parse(formattedDate); }
                 catch(Exception e) {}
                 Calendar cal1 = Calendar.getInstance();
-                cal1.add(Calendar.DATE, +1);
+                cal1.add(Calendar.DATE, +180);
                 v1= cal1.getTime();
                 SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yyyy");
                 formattedDate = df2.format(v1);
@@ -108,16 +109,14 @@ public class Welcomescreen extends AppCompatActivity
                                                                 {
                                                                         String pfvali = doc.getString("pfno");
                                                                         String d = doc.getString("dob");
-                                                                        validate1 = doc.getDate("date1");
-                                                                        m=doc.getString("shiftout");
-                                                                        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-                                                                        String formattedDate1 = df.format(validate1);
-                                                                        SimpleDateFormat dateFormat= new SimpleDateFormat("dd/MM/yyyy");
+                                                                        validate2 = doc.getString("date1");
+                                                                        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
                                                                         try {
-                                                                                validate1=dateFormat.parse(formattedDate1);
+                                                                                validate1 = format.parse(validate2);
+                                                                        } catch (ParseException e1) {
+                                                                                e1.printStackTrace();
                                                                         }
-                                                                        catch(Exception e1) {
-                                                                        }
+                                                                        m=doc.getString("shiftout");
                                                                         if ((pfvali.equals(Splashscreen.mpref.getString("Username", ""))) && (d.equals(Splashscreen.mpref.getString("Password", ""))))
                                                                         {
                                                                                 if (((cudate.before(validate1))||(cudate.equals(validate1)))&&((dutydate.after(validate1))||(dutydate.equals(validate1))))
@@ -127,7 +126,13 @@ public class Welcomescreen extends AppCompatActivity
                                                                                         shin = doc.getString("shiftin");
                                                                                         shout = doc.getString("shiftout");
                                                                                         div = doc.getString("division");
-                                                                                        dutydate=doc.getDate("date1");
+                                                                                        String te=doc.getString("date1");
+                                                                                        SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
+                                                                                        try {
+                                                                                               dutydate = format.parse(te);
+                                                                                        } catch (ParseException e1) {
+                                                                                                e1.printStackTrace();
+                                                                                        }
                                                                                 }
                                                                                 else if((v.equals(validate1))&&(m.equals("7:00AM"))) {
                                                                                         sec = doc.getString("section");
@@ -135,7 +140,14 @@ public class Welcomescreen extends AppCompatActivity
                                                                                         shin = doc.getString("shiftin");
                                                                                         shout = doc.getString("shiftout");
                                                                                         div = doc.getString("division");
-                                                                                        dutydate = doc.getDate("date1");
+                                                                                       // dutydate = doc.getString("date1");
+                                                                                        String te=doc.getString("date1");
+                                                                                        SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
+                                                                                        try {
+                                                                                                dutydate = format.parse(te);
+                                                                                        } catch (ParseException e1) {
+                                                                                                e1.printStackTrace();
+                                                                                        }
                                                                                 }
                                                                         }
                                                                 }
@@ -180,7 +192,7 @@ public class Welcomescreen extends AppCompatActivity
                                 }
                                 else if (actype2.equals("Div"))
                                 {
-                                        Intent mySuperIntent = new Intent(Welcomescreen.this, Divassign.class);
+                                        Intent mySuperIntent = new Intent(Welcomescreen.this, Homepage.class);
                                         startActivity(mySuperIntent);
                                         finish();
                                 }

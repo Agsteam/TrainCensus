@@ -9,21 +9,28 @@
         android:roundIcon="@drawable/icon1"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        <activity android:name=".Viewcensusofficer"
-            android:screenOrientation="userPortrait"/>
-        <activity android:name=".Divassign"
-            android:screenOrientation="userPortrait"/>
-        <activity android:name=".Fucounting"
-
-            android:screenOrientation="userPortrait"/>
-        <activity android:name=".Fumessage"
-            android:screenOrientation="userPortrait"/>
-        <activity android:name=".Welcomescreen"
-            android:screenOrientation="userPortrait"/>
-        <activity android:name=".Login"
-            android:screenOrientation="userPortrait"/>
-        <activity android:name=".Splashscreen"
+        <activity android:name=".Homepage"></activity>
+        <activity android:name=".ViewOptionActivity" />
+        <activity
+            android:name=".Viewcensusofficer"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".Divassign"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".Fucounting"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".Fumessage"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".Welcomescreen"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".Login"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".Splashscreen"
             android:screenOrientation="userPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

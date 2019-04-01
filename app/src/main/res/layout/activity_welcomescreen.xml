@@ -40,6 +40,7 @@
             android:textColor="#012B74"
             android:textSize="36sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/name1"
             android:layout_width="match_parent"
@@ -49,7 +50,8 @@
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="36sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="invisible" />
 
 
         <TextView

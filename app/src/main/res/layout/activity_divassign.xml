@@ -717,18 +717,4 @@
 
     </LinearLayout>
 
-
-    <android.support.design.widget.FloatingActionButton
-        style="@style/AppTheme.AppBarOverlay"
-        android:layout_width="wrap_content"
-        android:id="@+id/fab"
-        android:layout_height="75dp"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="16dp"
-        android:orientation="vertical"
-        android:src="@drawable/key"
-        app:backgroundTint="@color/colorPrimary"
-        app:fabSize="auto"
-        />
-
 </android.support.design.widget.CoordinatorLayout>

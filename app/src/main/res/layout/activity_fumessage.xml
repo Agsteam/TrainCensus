@@ -333,18 +333,19 @@
 
 
                 </LinearLayout>
+
                 <Button
                     android:id="@+id/nextid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:background="@drawable/style"
                     android:gravity="center"
                     android:text="NEXT"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
                     android:textColor="#fff"
                     android:textSize="15sp"
-                    />
+                    android:visibility="invisible" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

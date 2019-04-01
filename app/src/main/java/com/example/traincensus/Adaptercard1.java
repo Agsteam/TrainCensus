@@ -23,10 +23,10 @@ public class Adaptercard1 extends FirestoreRecyclerAdapter<FirestoreDivision, Ad
     protected void onBindViewHolder(@NonNull NoteHolder holder, int position, @NonNull FirestoreDivision model) {
         holder.textViewName.setText(model.getName());
         holder.textViewStation.setText(model.getStation());
-        Date a = model.getDate1();
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        String formattedDate = df.format(a);
-        holder.textViewDate.setText(formattedDate);
+        String a = model.getDate1();
+      //  SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+       // String formattedDate = df.format(a);
+        holder.textViewDate.setText(a);
         holder.textViewShifin.setText(model.getShiftin());
         holder.textViewShiftout.setText(model.getShiftout());
     }
