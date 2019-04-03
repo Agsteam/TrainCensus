@@ -71,7 +71,7 @@ public class Login extends AppCompatActivity
             public void onClick(View v)
             {
                 lprogress.setVisibility(View.VISIBLE);
-                loginpf = pf1.getText().toString().trim();
+                loginpf = pf1.getText().toString().trim().toUpperCase();
                 loginpass = dob1.getText().toString().trim();
                 if (loginpf.length() > 0 && loginpass.length() > 0)
                 {
