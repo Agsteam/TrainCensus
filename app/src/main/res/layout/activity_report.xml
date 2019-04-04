@@ -11,17 +11,21 @@
         android:id="@+id/editText2"
         android:layout_width="210dp"
         android:layout_height="35dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="80dp"
         android:ems="10"
+        android:background="#fff"
         android:inputType="number"
+        android:text="enter number"
+        android:textColor="#000"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button3"
@@ -29,11 +33,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="616dp"
+        android:layout_marginBottom="452dp"
         android:text="Report"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -41,26 +46,13 @@
         android:layout_width="131dp"
         android:layout_height="34dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:gravity="center"
         android:text="Train Number"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editText2"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.011" />
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="398dp"
-        android:layout_height="606dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
