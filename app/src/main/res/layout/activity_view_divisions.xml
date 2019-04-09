@@ -9,46 +9,95 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolfc"
-        android:layout_width="match_parent"
+        android:layout_width="421dp"
         android:layout_height="wrap_content"
-
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-
-        android:layout_marginStart="0dp"
-
-
-        android:background="@drawable/style"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#3d1ab0"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/AppTheme.PopupOverlay"
         android:visibility="visible"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark"
-        tools:layout_editor_absoluteX="0dp">
-
+        app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
         <TextView
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="View Divisions"
+            android:layout_marginLeft="70dp"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="22sp"
             android:textStyle="bold" />
-
-
-
     </android.support.v7.widget.Toolbar>
 
-    <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="262dp"
-        android:layout_height="28dp"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="218dp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="387dp"
+        android:textColor="#3d1ab0"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Select Divisions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolfc" />
 
+    <Spinner
+        android:id="@+id/spinner123"
+        android:layout_width="match_parent"
+        android:layout_height="21dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#3d1ab0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="379dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="96dp"
+        android:background="#3d1ab0"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="356dp"
+        android:background="@drawable/signinbutton"
+        android:text="Submit"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

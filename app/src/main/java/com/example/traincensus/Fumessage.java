@@ -78,14 +78,10 @@ public class Fumessage extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
-
-            //moveTaskToBack(false);
-
             return true;
         }
         return super.onKeyDown(keyCode, event);
     }
-
     protected void exitByBackKey() {
 
          new AlertDialog.Builder(this)
@@ -95,14 +91,9 @@ public class Fumessage extends AppCompatActivity {
                     public void onClick(DialogInterface arg0, int arg1) {
                          Toast.makeText(Fumessage.this,"Thank you for using Rail Census APP",Toast.LENGTH_SHORT).show();
                         finish();
-                        //close();
-
-
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
-
-                    // do something when the button is clicked
                     public void onClick(DialogInterface arg0, int arg1) {
                     }
                 })
