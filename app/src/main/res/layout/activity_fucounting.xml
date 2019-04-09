@@ -449,7 +449,7 @@
                                 android:background="@drawable/shape2"
                                 android:ems="10"
                                 android:hint="Enter coach no"
-                                android:inputType="number"
+                                android:inputType="phone"
                                 android:paddingLeft="5dp"
                                 android:scrollbarAlwaysDrawHorizontalTrack="true"
                                 android:textColor="#27116f"
@@ -469,13 +469,13 @@
                                 android:layout_marginEnd="4dp"
                                 android:background="@drawable/shape2"
                                 android:ems="10"
-                                android:inputType="text"
                                 android:paddingLeft="5dp"
                                 android:textColor="#27116f"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.521"
                                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                                app:layout_constraintTop_toBottomOf="@+id/gsa" />
+                                app:layout_constraintTop_toBottomOf="@+id/gsa"
+                                android:inputType="phone" />
 
                             <EditText
                                 android:id="@+id/wgscza"
@@ -486,12 +486,12 @@
                                 android:layout_marginEnd="4dp"
                                 android:background="@drawable/shape2"
                                 android:ems="10"
-                                android:inputType="text"
                                 android:paddingLeft="5dp"
                                 android:textColor="#27116f"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                                app:layout_constraintTop_toBottomOf="@+id/gsrda" />
+                                app:layout_constraintTop_toBottomOf="@+id/gsrda"
+                                android:inputType="phone" />
 
                             <EditText
                                 android:id="@+id/gsra"
@@ -502,12 +502,12 @@
                                 android:layout_marginEnd="4dp"
                                 android:background="@drawable/shape2"
                                 android:ems="10"
-                                android:inputType="text"
                                 android:paddingLeft="5dp"
                                 android:textColor="#27116f"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                                app:layout_constraintTop_toBottomOf="@+id/wgscza" />
+                                app:layout_constraintTop_toBottomOf="@+id/wgscza"
+                                android:inputType="phone" />
 
                             <EditText
                                 android:id="@+id/gslra"
@@ -518,12 +518,12 @@
                                 android:layout_marginEnd="4dp"
                                 android:background="@drawable/shape2"
                                 android:ems="10"
-                                android:inputType="text"
                                 android:paddingLeft="5dp"
                                 android:textColor="#27116f"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                                app:layout_constraintTop_toBottomOf="@+id/gsra" />
+                                app:layout_constraintTop_toBottomOf="@+id/gsra"
+                                android:inputType="phone" />
 
                             <EditText
                                 android:id="@+id/gslrda"
@@ -534,12 +534,12 @@
                                 android:layout_marginEnd="4dp"
                                 android:background="@drawable/shape2"
                                 android:ems="10"
-                                android:inputType="text"
                                 android:paddingLeft="5dp"
                                 android:textColor="#27116f"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                                app:layout_constraintTop_toBottomOf="@+id/gslra" />
+                                app:layout_constraintTop_toBottomOf="@+id/gslra"
+                                android:inputType="phone" />
 
 
                         </android.support.constraint.ConstraintLayout>

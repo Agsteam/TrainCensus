@@ -3,12 +3,9 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
+
+import java.util.Objects;
 
 public class Splashscreen extends AppCompatActivity {
 
@@ -21,7 +18,7 @@ public class Splashscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
         mpref=getSharedPreferences(Pref_Name,MODE_PRIVATE);
-        if((mpref.getString("Username","").equals(""))&&(mpref.getString("Password","").equals("")))
+        if((Objects.requireNonNull(mpref.getString("Username", "")).equals(""))&&(Objects.requireNonNull(mpref.getString("Password", "")).equals("")))
         {
             new Handler().postDelayed(new Runnable()
             {

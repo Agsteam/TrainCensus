@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context=".Homepage"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    android:layout_width="match_parent"
-    >
+    tools:context=".Head">
+
+
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/con1"
@@ -32,7 +32,7 @@
             app:layout_constraintHorizontal_bias="0.058"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/nom" />
+            app:srcCompat="@drawable/all" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -50,54 +50,20 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/Nomi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="56dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/signinbutton"
-            android:text="Nomination of Census"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/update" />
-
-        <Button
-            android:id="@+id/update"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/signinbutton"
-            android:text="Update Staff Data"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
             android:id="@+id/Viewre"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="124dp"
+            android:layout_marginBottom="300dp"
             android:background="@drawable/signinbutton"
-            android:text="View assigned Officers"
+            android:text="View Divisions"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Nomi"
-            app:layout_constraintVertical_bias="0.86" />
+            app:layout_constraintStart_toStartOf="parent" />
+
         <Button
             android:id="@+id/port"
             android:layout_width="match_parent"
@@ -110,10 +76,11 @@
             android:text="Report"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Viewre"
-            app:layout_constraintVertical_bias="0.594" />
+            app:layout_constraintVertical_bias="0.196" />
 
     </android.support.constraint.ConstraintLayout>
+
 </android.support.constraint.ConstraintLayout>

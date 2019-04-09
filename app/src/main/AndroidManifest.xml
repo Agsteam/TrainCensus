@@ -9,7 +9,11 @@
         android:roundIcon="@drawable/icon1"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Reportclass"></activity>
+        <activity android:name=".ViewDivisions"></activity>
+        <activity android:name=".Repdiv" />
+        <activity android:name=".Head" />
+        <activity android:name=".Update" />
+        <activity android:name=".Reportclass" />
         <activity android:name=".Reportcreate" />
         <activity android:name=".Report" />
         <activity android:name=".Homepage" />

@@ -2,24 +2,18 @@ package com.example.traincensus;
 
 
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 
@@ -41,7 +35,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -51,7 +44,9 @@ import static java.lang.String.valueOf;
 
 
 public class Divassign extends AppCompatActivity {
+    DatabaseHelper myDb;
     List<String> list, list1;
+    List<String> mango;
     TextView shiftin, shiftout, div;
     TimePickerDialog timePickerDialog;
     Spinner spinsec, spinsta;
@@ -65,7 +60,9 @@ public class Divassign extends AppCompatActivity {
     public Calendar calendar1 = Calendar.getInstance();
     Date date5;
     int flag, flag1;
-
+    AutoCompleteTextView myAutoComplete;
+    ArrayAdapter<String> myAdapter;
+    String z;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,8 +78,11 @@ public class Divassign extends AppCompatActivity {
         pfnostaff = findViewById(R.id.Pfno);
         Toolbar toolbar = findViewById(R.id.toolda);
         TextView dtext = (TextView) toolbar.findViewById(R.id.dividshow);
+        myAutoComplete=findViewById(R.id.autopf);
         calendar1.add(Calendar.DATE, 0);
         div.setText(Splashscreen.mpref.getString("Division", "").toUpperCase());
+        myDb = new DatabaseHelper(this);
+        AddData();
         if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("PALAKKAD"))
             dtext.setText("DIV ADMIN - PGT");
         if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("CHENNAI"))
@@ -406,6 +406,25 @@ public class Divassign extends AppCompatActivity {
             {
             }
         });
+        myAutoComplete.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View arg1, int pos,
+                                    long id) {
+                Toast.makeText(Divassign.this," selected", Toast.LENGTH_LONG).show();
+                List<Updateclass> apple=myDb.getAllvalues();
+                mango = new ArrayList<>();
+                for(Updateclass d:apple)
+                    if(d.getPf().equals(myAutoComplete.getText().toString()))
+                    {
+                        namestaff.setText(d.getName().toUpperCase());
+                        pfnostaff.setText(d.getMobile());
+                    }
+
+                Toast.makeText(Divassign.this," selected", Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
     private void updateLabel2()
     {
@@ -425,10 +444,27 @@ public class Divassign extends AppCompatActivity {
     }
     public void tamil()
     {
-        FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(), pfnostaff.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(), pfnostaff.getText().toString().trim(), "field", divSection, date11.getText().toString());
+        FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(),  myAutoComplete.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(),pfnostaff.getText().toString().trim(), "field", divSection, date11.getText().toString());
         notebookRef.add(note);
         flag1 = 1;
         reasign();
         Toast.makeText(Divassign.this, "Record Saved Successfully", Toast.LENGTH_LONG).show();
+    }
+    public void AddData()
+    {
+                     List<Updateclass> apple=myDb.getAllvalues();
+                     mango = new ArrayList<>();
+                     for(Updateclass d:apple)
+                          mango.add(d.getPf());
+                      Divassign.this.runOnUiThread(new Runnable()
+                      {
+                      @Override
+                        public void run()
+                        {
+                         myAdapter = new ArrayAdapter<String>(Divassign.this, android.R.layout.simple_list_item_1, mango);
+                         myAutoComplete.setAdapter(myAdapter);
+                         myAdapter.notifyDataSetChanged();
+                        }
+                      });
     }
 }

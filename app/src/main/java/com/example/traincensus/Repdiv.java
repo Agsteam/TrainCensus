@@ -1,5 +1,4 @@
 package com.example.traincensus;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Report extends AppCompatActivity
+public class Repdiv extends AppCompatActivity
 {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference ref = database.getReference("field");
@@ -25,7 +24,7 @@ public class Report extends AppCompatActivity
     DatabaseReference ref2 = database.getReference("field");
     EditText et;
     Button bt;
-    String tnum,tnum1="";
+    String tnum,tnum1="",div;
     ArrayList<String> st = new ArrayList<>();
     ArrayList<String> st1 = new ArrayList<>();
     ArrayList<String> dt = new ArrayList<>();
@@ -41,6 +40,7 @@ public class Report extends AppCompatActivity
         setContentView(R.layout.activity_report);
         et=findViewById(R.id.editText2);
         bt=findViewById(R.id.button3);
+        div=Splashscreen.mpref.getString("Division", "");
         bt.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -81,7 +81,7 @@ public class Report extends AppCompatActivity
                     Adddata1 post1 = postSnapshot1.getValue(Adddata1.class);
                     String tq1 = post1.getTrain();
                     tq1 = tq1.substring(0, 5);
-                    if (Integer.parseInt(tnum) == Integer.parseInt(tq1))
+                    if ((Integer.parseInt(tnum) == Integer.parseInt(tq1))&&(div.equals(post1.getDiv())))
                     {
                         tnum1=post1.getTrain();
                         dt.add(post1.getDudate());
@@ -90,9 +90,9 @@ public class Report extends AppCompatActivity
                 Collections.sort(dt);
                 dt1 = removeDuplicates(dt);
                 if(!tnum1.equals(""))
-                second();
+                    second();
                 else
-                    Toast.makeText(Report.this,"Your Entered Train Number Not Have Census Details",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Repdiv.this,"Your Entered Train Number Not Have Census Details",Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onCancelled(DatabaseError databaseError)
@@ -109,7 +109,8 @@ public class Report extends AppCompatActivity
                 for (DataSnapshot postSnapshot2 : dataSnapshot.getChildren())
                 {
                     Adddata1 post2 = postSnapshot2.getValue(Adddata1.class);
-                    if ((tnum1.equals(post2.getTrain())) && (dt.get(i).equals(post2.getDudate()))) {
+                    if ((tnum1.equals(post2.getTrain())) && (dt.get(i).equals(post2.getDudate()))&&(div.equals(post2.getDiv())))
+                    {
                         st.add(post2.getStation());
                     }
                     Collections.sort(st);
@@ -140,26 +141,26 @@ public class Report extends AppCompatActivity
                 {
                     for(i=0;i<dt1.size();i++)
                     {
-                      for(j1=0;j1<st1.size();j1++)
-                      {
-                        Adddata1 post3 = postSnapshot3.getValue(Adddata1.class);
-                        if (((tnum1.equals(post3.getTrain())) && (dt1.get(i).equals(post3.getDudate()))) && (st1.get(j1).equals(post3.getStation())))
+                        for(j1=0;j1<st1.size();j1++)
                         {
-                             total=post3.getAv();
-                             count=count+1;
-                             total = total + tav.get(j1);
-                             count = count + j.get(j1);
-                             tav.add(j1,total);
-                             tav.remove(j1+1);
-                             j.add(j1,count);
-                             j.remove(j1+1);
-                             y1=total/count;
-                             per.add(j1,y1);
-                             per.remove(j1+1);
-                             total=0;
-                             count=0;
+                            Adddata1 post3 = postSnapshot3.getValue(Adddata1.class);
+                            if (((tnum1.equals(post3.getTrain())) && (dt1.get(i).equals(post3.getDudate()))) && (st1.get(j1).equals(post3.getStation()))&&(div.equals(post3.getDiv())))
+                            {
+                                total=post3.getAv();
+                                count=count+1;
+                                total = total + tav.get(j1);
+                                count = count + j.get(j1);
+                                tav.add(j1,total);
+                                tav.remove(j1+1);
+                                j.add(j1,count);
+                                j.remove(j1+1);
+                                y1=total/count;
+                                per.add(j1,y1);
+                                per.remove(j1+1);
+                                total=0;
+                                count=0;
+                            }
                         }
-                      }
                     }
                 }
                 i=0;
@@ -175,7 +176,7 @@ public class Report extends AppCompatActivity
     }
     public void pass()
     {
-        Intent intent=new Intent(Report.this,Reportcreate.class);
+        Intent intent=new Intent(Repdiv.this,Reportcreate.class);
         intent.putStringArrayListExtra("st",st);
         intent.putStringArrayListExtra("dt",dt);
         intent.putIntegerArrayListExtra("tav",tav);

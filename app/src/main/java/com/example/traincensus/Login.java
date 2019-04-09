@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,19 +12,13 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.Objects;
 
 import static com.example.traincensus.Splashscreen.mpref;
 
@@ -37,18 +30,17 @@ public class Login extends AppCompatActivity
     Button singin1;
     String loginpf,loginpass,a,name="",actype,divname;
     FirebaseFirestore database1=FirebaseFirestore.getInstance();
-    DocumentReference noteRef=database1.document("");
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        lprogress=(ProgressBar)findViewById(R.id.progressBar3);
-        hdloginlable = (TextView) findViewById(R.id.textView5);
-        ins=(TextView)findViewById(R.id.textView6);
+        lprogress=findViewById(R.id.progressBar3);
+        hdloginlable =  findViewById(R.id.textView5);
+        ins=findViewById(R.id.textView6);
         hdloginlable.setText(getIntent().getStringExtra("lable"));
-        pf1=(EditText)findViewById(R.id.pfno);
-        dob1=(EditText)findViewById(R.id.dob);
-        singin1 = (Button) findViewById(R.id.signin);
+        pf1=findViewById(R.id.pfno);
+        dob1=findViewById(R.id.dob);
+        singin1 = findViewById(R.id.signin);
         lprogress.setVisibility(View.GONE);
         if (hdloginlable.getText().toString().equals("Division Admin"))
         {
@@ -56,14 +48,20 @@ public class Login extends AppCompatActivity
             pf1.setHint("USER ID");
             dob1.setHint("PASSWORD");
             ins.setVisibility(View.VISIBLE);
-            ins.setText("(Password will be issued by HQ Admin)");
+            ins.setText(getString(R.string.password));
 
         }
-        else if (hdloginlable.getText().toString().equals("Census Officer"))
+        else if (hdloginlable.getText().toString().equals(getString(R.string.censusofficer)))
         {
-            a = "field";
-            pf1.setHint("USER ID IS YOUR PF NUMBER");
-            dob1.setHint("PASSWORD IS YOUR MOBILE NUMBER");
+            a = getString(R.string.field1);
+            pf1.setHint(getString(R.string.user12));
+            dob1.setHint(getString(R.string.pass1));
+        }
+        else if (hdloginlable.getText().toString().equals("Head Quarters"))
+        {
+            a = "HQ";
+            pf1.setHint("USER ID");
+            dob1.setHint("PASSWORD");
         }
         singin1.setOnClickListener(new View.OnClickListener()
         {
@@ -72,7 +70,7 @@ public class Login extends AppCompatActivity
             {
                 lprogress.setVisibility(View.VISIBLE);
                 loginpf = pf1.getText().toString().trim().toUpperCase();
-                loginpass = dob1.getText().toString().trim();
+                loginpass = dob1.getText().toString().trim().toUpperCase();
                 if (loginpf.length() > 0 && loginpass.length() > 0)
                 {
                     database1.collection("Login").addSnapshotListener(new EventListener<QuerySnapshot>()
@@ -88,8 +86,8 @@ public class Login extends AppCompatActivity
                             {
                                 for (DocumentSnapshot doc : queryDocumentSnapshots)
                                 {
-                                    String pfvali = doc.getString("pfno");
-                                    String d = doc.getString("dob");
+                                    String pfvali = Objects.requireNonNull(doc.getString("pfno")).toUpperCase();
+                                    String d = Objects.requireNonNull(doc.getString("dob")).toUpperCase();
                                     if (pfvali.equals(loginpf) && d.equals(loginpass))
                                     {
                                         name = doc.getString("name");
@@ -103,8 +101,6 @@ public class Login extends AppCompatActivity
                                     lprogress.setVisibility(View.GONE);
                                 }
                                 else if (!name.equals(""))
-
-
                                 {
                                     Intent intent = new Intent(Login.this, Welcomescreen.class);
                                     SharedPreferences.Editor editor=mpref.edit();
