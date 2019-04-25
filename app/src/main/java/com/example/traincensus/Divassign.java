@@ -1,25 +1,19 @@
 package com.example.traincensus;
 
-
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.util.Log;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 
@@ -41,7 +35,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -51,7 +44,9 @@ import static java.lang.String.valueOf;
 
 
 public class Divassign extends AppCompatActivity {
+    DatabaseHelper myDb;
     List<String> list, list1;
+    List<String> mango;
     TextView shiftin, shiftout, div;
     TimePickerDialog timePickerDialog;
     Spinner spinsec, spinsta;
@@ -65,7 +60,8 @@ public class Divassign extends AppCompatActivity {
     public Calendar calendar1 = Calendar.getInstance();
     Date date5;
     int flag, flag1;
-
+    AutoCompleteTextView myAutoComplete;
+    ArrayAdapter<String> myAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,9 +76,12 @@ public class Divassign extends AppCompatActivity {
         namestaff = findViewById(R.id.nameview);
         pfnostaff = findViewById(R.id.Pfno);
         Toolbar toolbar = findViewById(R.id.toolda);
-        TextView dtext = (TextView) toolbar.findViewById(R.id.dividshow);
+        TextView dtext =  toolbar.findViewById(R.id.dividshow);
+        myAutoComplete=findViewById(R.id.autopf);
         calendar1.add(Calendar.DATE, 0);
         div.setText(Splashscreen.mpref.getString("Division", "").toUpperCase());
+        myDb = new DatabaseHelper(this);
+        AddData();
         if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("PALAKKAD"))
             dtext.setText("DIV ADMIN - PGT");
         if (Splashscreen.mpref.getString("Division", "").toUpperCase().equals("CHENNAI"))
@@ -101,6 +100,8 @@ public class Divassign extends AppCompatActivity {
                 flag = 0;
                 flag1 = 0;
                 SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+
+
                 try {
                     date5 = format.parse(date11.getText().toString());
                 } catch (ParseException e) {
@@ -144,8 +145,11 @@ public class Divassign extends AppCompatActivity {
                             });
                     AlertDialog alertDialog = alertDialogBuilder.create();
                     alertDialog.show();
-                } else
-                    Toast.makeText(Divassign.this, getString(R.string.a10), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast toast=Toast.makeText(Divassign.this, getString(R.string.a10), Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.START,90,0);
+                    toast.show();
+                }
             }
         });
         final DatePickerDialog.OnDateSetListener date12 = new DatePickerDialog.OnDateSetListener() {
@@ -160,6 +164,7 @@ public class Divassign extends AppCompatActivity {
 
         };
         date11.setOnClickListener(new View.OnClickListener() {
+
 
             @Override
             public void onClick(View v) {
@@ -241,6 +246,7 @@ public class Divassign extends AppCompatActivity {
             int hour = calendar.get(calendar.HOUR);
             int minute = calendar.get(calendar.MINUTE);
 
+
             @Override
             public void onClick(View v) {
                 shiftout.setError(null);
@@ -307,64 +313,9 @@ public class Divassign extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void reasign()
-    {
-        if(flag1==1)
-        {
-            AlertDialog.Builder alertDialogBuilder1 = new AlertDialog.Builder(Divassign.this);
-            alertDialogBuilder1.setTitle("Do you Want to Nominate Same Officer");
-            alertDialogBuilder1
-                    .setMessage(show1(a1))
-                    .setCancelable(false)
-                    .setPositiveButton("Confirm", new DialogInterface.OnClickListener()
-                    {
-                        public void onClick(DialogInterface dialog, int id)
-                        {
-                            date11.setText("DD/MM/YYYY");
-                            shiftin.setText("HH:MM");
-                            shiftout.setText("HH:MM");
 
-                        }
-                    })
-                    .setNegativeButton("Reassign", new DialogInterface.OnClickListener()
-                    {
-                        public void onClick(DialogInterface dialog, int id)
-                        {
-                            namestaff.setText("");
-                            pfnostaff.setText("");
-                            date11.setText("DD/MM/YYYY");
-                            shiftin.setText("HH:MM");
-                            shiftout.setText("HH:MM");
-                            dialog.cancel();
-                        }
-                    });
-            AlertDialog alertDialog1 = alertDialogBuilder1.create();
-            alertDialog1.show();
-        }
-    }
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            exitByBackKey();
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-    protected void exitByBackKey()
-    {
-        AlertDialog alertbox = new AlertDialog.Builder(this)
-                .setMessage("Do you want to exit application?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        finish();
-                        Intent intent=new Intent(Divassign.this,Homepage.class);
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface arg0, int arg1) {
-                    }
-                })
-                .show();
-    }
+
+
     public void spinsta()
     {
         database2.collection(Splashscreen.mpref.getString("Division","").toLowerCase()).addSnapshotListener(new EventListener<QuerySnapshot>()
@@ -406,6 +357,21 @@ public class Divassign extends AppCompatActivity {
             {
             }
         });
+        myAutoComplete.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View arg1, int pos,long id)
+            {
+                List<Updateclass> apple=myDb.getAllvalues();
+                mango = new ArrayList<>();
+                for(Updateclass d:apple)
+                    if(d.getPf().equals(myAutoComplete.getText().toString()))
+                    {
+                        namestaff.setText(d.getName().toUpperCase());
+                        pfnostaff.setText(d.getMobile());
+                    }
+            }
+        });
     }
     private void updateLabel2()
     {
@@ -415,20 +381,77 @@ public class Divassign extends AppCompatActivity {
     }
     public String show(String a)
     {
-        a = "Name :" + namestaff.getText().toString()+ '\n' + "  Pf No :" + pfnostaff.getText().toString() + '\n' +"Section :"+divSection+'\n'+"Station :"+divStation+'\n'+'\n'+"Date :"+date11.getText().toString()+'\n'+"Shift In  :"+shiftin.getText().toString()+"  Shift Out :"+shiftout.getText().toString();
+        a = "Name :" + namestaff.getText().toString()+ '\n' + "Pf No :" +myAutoComplete.getText().toString() + '\n'+ "Mobile :" +pfnostaff.getText().toString()+'\n' +"Section :"+divSection+'\n'+"Station :"+divStation+'\n'+'\n'+"Date :"+date11.getText().toString()+'\n'+"Shift In  :"+shiftin.getText().toString()+"Shift Out :"+shiftout.getText().toString();
         return (a);
     }
     public String show1(String a1)
     {
-        a1 = "Name :" + namestaff.getText().toString()+ '\n' + "  Pf No :" + pfnostaff.getText().toString();
+        a1 = "Name :" + namestaff.getText().toString()+ '\n' + "Pf No :" + pfnostaff.getText().toString();
         return (a1);
     }
     public void tamil()
     {
-        FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(), pfnostaff.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(), pfnostaff.getText().toString().trim(), "field", divSection, date11.getText().toString());
-        notebookRef.add(note);
-        flag1 = 1;
-        reasign();
-        Toast.makeText(Divassign.this, "Record Saved Successfully", Toast.LENGTH_LONG).show();
+        AlertDialog.Builder alertDialogBuilder1 = new AlertDialog.Builder(Divassign.this);
+        alertDialogBuilder1.setTitle("Do you Want to Nominate Same Officer");
+        alertDialogBuilder1
+                .setMessage(show1(a1))
+                .setCancelable(false)
+                .setPositiveButton("Confirm", new DialogInterface.OnClickListener()
+                {
+                    public void onClick(DialogInterface dialog, int id)
+                    {
+                        Toast toast=Toast.makeText(Divassign.this, "Record Saved Successfully", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.START,90,0);
+                        toast.show();
+                        FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(),  myAutoComplete.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(),pfnostaff.getText().toString().trim(), "field", divSection, date11.getText().toString());
+                        notebookRef.add(note);
+                        date11.setText("DD/MM/YYYY");
+                        shiftin.setText("HH:MM");
+                        shiftout.setText("HH:MM");
+                    }
+                })
+                .setNegativeButton("Reassign", new DialogInterface.OnClickListener()
+                {
+                    public void onClick(DialogInterface dialog, int id)
+                    {
+                        Toast toast=Toast.makeText(Divassign.this, "Record Saved Successfully", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.START,90,0);
+                        toast.show();
+                        FirestoreDivision note = new FirestoreDivision(Splashscreen.mpref.getString("Division", ""), namestaff.getText().toString().trim(),  myAutoComplete.getText().toString().trim(), divStation, shiftin.getText().toString().trim(), shiftout.getText().toString().trim(),pfnostaff.getText().toString().trim(), "field", divSection, date11.getText().toString());
+                        notebookRef.add(note);
+                        namestaff.setText("");
+                        pfnostaff.setText("");
+                        myAutoComplete.setText("");
+                        date11.setText("DD/MM/YYYY");
+                        shiftin.setText("HH:MM");
+                        shiftout.setText("HH:MM");
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alertDialog1 = alertDialogBuilder1.create();
+        alertDialog1.show();
+    }
+    public void AddData()
+    {
+        List<Updateclass> apple=myDb.getAllvalues();
+        mango = new ArrayList<>();
+        for(Updateclass d:apple)
+            mango.add(d.getPf());
+        Divassign.this.runOnUiThread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                myAdapter = new ArrayAdapter<String>(Divassign.this, android.R.layout.simple_list_item_1, mango);
+                myAutoComplete.setAdapter(myAdapter);
+                myAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+    public void onBackPressed()
+    {
+        Intent intent=new Intent(Divassign.this,Homepage.class);
+        startActivity(intent);
+        finish();
     }
 }

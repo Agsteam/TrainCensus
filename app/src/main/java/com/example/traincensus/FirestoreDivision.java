@@ -1,19 +1,12 @@
 package com.example.traincensus;
-
-import com.google.firebase.database.Exclude;
-
-import java.util.Date;
-import java.util.List;
-
 public class FirestoreDivision
 {
-        private String Name,Pfno,Station,Shiftin,Shiftout,DOB,Accestype,Division,Section;
-        private String Date1;
+    private String Name,Pfno,Station,Shiftin,Shiftout,DOB,Accestype,Division,Section;
+    private String Date1;
 
-        public FirestoreDivision()
-        {
-            //public no-arg constructor needed
-        }
+    public FirestoreDivision()
+    {
+    }
 
     public FirestoreDivision(String Division,String Name,String Pfno,String Station,String Shiftin,String Shiftout,String DOB,String Accestype,String Section,String Date1)
     {
@@ -119,4 +112,3 @@ public class FirestoreDivision
         return Date1;
     }
 }
-

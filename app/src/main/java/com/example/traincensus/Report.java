@@ -1,27 +1,20 @@
 package com.example.traincensus;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+import android.widget.Toast;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
 
 public class Report extends AppCompatActivity
 {
@@ -31,15 +24,16 @@ public class Report extends AppCompatActivity
     DatabaseReference ref2 = database.getReference("field");
     EditText et;
     Button bt;
-    String tnum,tnum1,tdate;
-    ArrayList<String> st = new ArrayList<String>();
-    ArrayList<String> st1 = new ArrayList<String>();
-    ArrayList<String> dt = new ArrayList<String>();
-    ArrayList<String> dt1 = new ArrayList<String>();
-    ArrayList<Integer> tav = new ArrayList<Integer>();
-    ArrayList<Integer> j = new ArrayList<Integer>();
-    ArrayList<Integer> per = new ArrayList<Integer>();
-    int total=0,count=0,i,j1,y1=0;
+    String tnum,tnum1="";
+    ArrayList<String> st = new ArrayList<>();
+    ArrayList<String> st1 = new ArrayList<>();
+    ArrayList<String> dt = new ArrayList<>();
+    ArrayList<String> dt1 = new ArrayList<>();
+    ArrayList<Integer> tav = new ArrayList<>();
+    ArrayList<Integer> j = new ArrayList<>();
+    ArrayList<Integer> per = new ArrayList<>();
+    int total=0,count=0,i=0,j1;
+    float y1=0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,6 +46,7 @@ public class Report extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                tnum=et.getText().toString().trim();
                 st.clear();
                 st1.clear();
                 dt.clear();
@@ -59,7 +54,13 @@ public class Report extends AppCompatActivity
                 tav.clear();
                 j.clear();
                 per.clear();
+                if(!et.getText().toString().isEmpty())
                 first();
+                else{
+                    Toast toast=Toast.makeText(Report.this, "Please enter the Train No", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.START,90,0);
+                    toast.show();
+                }
             }
         });
     }
@@ -83,7 +84,6 @@ public class Report extends AppCompatActivity
             {
                 for (DataSnapshot postSnapshot1: dataSnapshot.getChildren())
                 {
-                    tnum=et.getText().toString().trim();
                     Adddata1 post1 = postSnapshot1.getValue(Adddata1.class);
                     String tq1 = post1.getTrain();
                     tq1 = tq1.substring(0, 5);
@@ -95,7 +95,14 @@ public class Report extends AppCompatActivity
                 }
                 Collections.sort(dt);
                 dt1 = removeDuplicates(dt);
-                second();
+                if(!tnum1.equals(""))
+                {
+                    second();}
+                else {
+                    Toast toast=Toast.makeText(Report.this, "Train No you entered is not valid ", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.START,90,0);
+                    toast.show();
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError)
@@ -109,15 +116,18 @@ public class Report extends AppCompatActivity
         ref1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                for(int o=0;o<dt1.size();o++)
                 for (DataSnapshot postSnapshot2 : dataSnapshot.getChildren())
                 {
                     Adddata1 post2 = postSnapshot2.getValue(Adddata1.class);
-                    if ((tnum1.equals(post2.getTrain())) && (dt.get(i).equals(post2.getDudate()))) {
+                    String tq2 = post2.getTrain();
+                    tq2 = tq2.substring(0, 5);
+                    if ((tnum.equals(tq2)) && (dt1.get(o).equals(post2.getDudate()))) {
                         st.add(post2.getStation());
                     }
-                    Collections.sort(st);
-                    st1 = removeDuplicates(st);
                 }
+                Collections.sort(st);
+                st1 = removeDuplicates(st);
                 third();
             }
             @Override
@@ -143,28 +153,32 @@ public class Report extends AppCompatActivity
                 {
                     for(i=0;i<dt1.size();i++)
                     {
-                      for(j1=0;j1<st1.size();j1++)
-                      {
-                        Adddata1 post3 = postSnapshot3.getValue(Adddata1.class);
-                        if (((tnum1.equals(post3.getTrain())) && (dt1.get(i).equals(post3.getDudate()))) && (st1.get(j1).equals(post3.getStation())))
+                        for(j1=0;j1<st1.size();j1++)
                         {
-                             total=post3.getAv();
-                             count=count+1;
-                             total = total + tav.get(j1);
-                             count = count + j.get(j1);
-                             tav.add(j1,total);
-                             tav.remove(j1+1);
-                             j.add(j1,count);
-                             j.remove(j1+1);
-                             y1=total/count;
-                             per.add(j1,y1);
-                             per.remove(j1+1);
-                             total=0;
-                             count=0;
+                            Adddata1 post3 = postSnapshot3.getValue(Adddata1.class);
+                            String tq2 = post3.getTrain();
+                            tq2 = tq2.substring(0, 5);
+                            if (((tnum.equals(tq2)) && (dt1.get(i).equals(post3.getDudate()))) && (st1.get(j1).equals(post3.getStation())))
+                            {
+                                total=post3.getTc();
+                                count=post3.getCc();
+                                total = total + tav.get(j1);
+                                count = count + j.get(j1);
+                                tav.add(j1,total);
+                                tav.remove(j1+1);
+                                j.add(j1,count);
+                                j.remove(j1+1);
+                                y1=Math.round(((float)total/(float)count)*100);
+                                per.add(j1,(int)y1);
+                                per.remove(j1+1);
+                                total=0;
+                                count=0;
+                            }
                         }
-                      }
                     }
                 }
+                i=0;
+                j1=0;
                 pass();
             }
             @Override
@@ -182,6 +196,44 @@ public class Report extends AppCompatActivity
         intent.putIntegerArrayListExtra("tav",tav);
         intent.putIntegerArrayListExtra("j",j);
         intent.putIntegerArrayListExtra("per",per);
+        intent.putExtra("tra",tnum1);
         startActivity(intent);
+        finish();
+    }
+    public void onBackPressed()
+    {
+            Intent intent = new Intent(Report.this, Head.class);
+            startActivity(intent);
+            finish();
+
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

@@ -1,6 +1,4 @@
 package com.example.traincensus;
-
-
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,13 +10,13 @@ import java.util.ArrayList;
 
 public class Reportclass extends RecyclerView.Adapter<Reportclass.WordViewHolder>
 {
-   private ArrayList<String> st;
-   ArrayList<String> dt;
-   ArrayList<Integer> tav;
-   ArrayList<Integer> j;
-   ArrayList<Integer> per;
-   private LayoutInflater mInflater;
-   public Reportclass(Context context,ArrayList<String> st, ArrayList<String> dt, ArrayList<Integer> tav, ArrayList<Integer> j, ArrayList<Integer> per) {
+    private ArrayList<String> st;
+    ArrayList<String> dt;
+    ArrayList<Integer> tav;
+    ArrayList<Integer> j;
+    ArrayList<Integer> per;
+    private LayoutInflater mInflater;
+    public Reportclass(Context context,ArrayList<String> st, ArrayList<String> dt, ArrayList<Integer> tav, ArrayList<Integer> j, ArrayList<Integer> per) {
         mInflater = LayoutInflater.from(context);
         this.st = st;
         this.dt = dt;

@@ -1,4 +1,5 @@
-package com.example.traincensus;
+
+        package com.example.traincensus;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -24,8 +25,6 @@ public class Adaptercard1 extends FirestoreRecyclerAdapter<FirestoreDivision, Ad
         holder.textViewName.setText(model.getName());
         holder.textViewStation.setText(model.getStation());
         String a = model.getDate1();
-      //  SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-       // String formattedDate = df.format(a);
         holder.textViewDate.setText(a);
         holder.textViewShifin.setText(model.getShiftin());
         holder.textViewShiftout.setText(model.getShiftout());

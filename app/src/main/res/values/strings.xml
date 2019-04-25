@@ -40,6 +40,22 @@
     <string name="logt" />
     <string name="logoutoi">Logout</string>
     <string name="todo1">a</string>
+    <string name="empty" />
+    <string name="password">(Password will be issued by HQ Admin)</string>
+    <string name="pass1">PASSWORD IS YOUR MOBILE NUMBER</string>
+    <string name="user12">USER ID IS YOUR PF NUMBER</string>
+    <string name="field1">field</string>
+    <string name="censusofficer">Census Officer</string>
+    <string name="text">Text</string>
+    <string name="textview">TextView</string>
+    <string name="view">View</string>
+    <string name="fg">T</string>
+    <string name="total_occ">Total OCC</string>
+    <string name="no_of_days_no_of_entries">Total CC</string>
+    <string name="avg_of_occ"> % OCC</string>
+    <string name="whq">HQ ADMIN</string>
+    <string name="wopen">Opening your dashboard</string>
+    <string name="wdiv">DIV ADMIN</string>
 
     <string-array name="hu">
 

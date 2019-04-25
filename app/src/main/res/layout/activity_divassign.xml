@@ -35,7 +35,7 @@
             android:id="@+id/dividshow"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Division Officer"
+            android:text="Assign Census Officer"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="18sp"
@@ -74,45 +74,16 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp"
-                    android:paddingTop="12dp">
+                    android:paddingTop="60dp">
 
 
-                    <!--****ADDRESS LINE 2 FIELD****-->
 
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:paddingTop="12dp">
-
-                            >
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="12dp">
+                            android:paddingTop="60dp">
 
                             <TextView
                                 android:id="@+id/divname"
@@ -127,7 +98,7 @@
                                  />
 
 
-                        </LinearLayout>
+
                     </LinearLayout>
 
 
@@ -185,140 +156,6 @@
                             android:paddingTop="12dp">
 
                             <TextView
-                                android:id="@+id/Section"
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/open_sans_bold"
-                                android:text="Section"
-                                android:textStyle="bold"
-                                android:textColor="#27116f"
-                                android:textSize="18sp"
-                                />
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/style"
-                            android:orientation="vertical"
-
-                            >
-
-                            <Spinner
-
-                                android:id="@+id/Secname"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:background="#27116f"
-                                android:textStyle="bold"
-                                android:popupBackground="#27116f"
-                                android:textColor="#27116f"/>
-
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:background="#3d1ab0" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="12dp">
-
-                            <TextView
-                                android:id="@+id/station"
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Station"
-                                android:textStyle="bold"
-                                android:textColor="#27116f"
-                                android:textSize="18sp"
-                                />
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/style"
-                            android:orientation="vertical"
-
-                            >
-
-                            <Spinner
-
-                                android:id="@+id/Stationview"
-                                android:layout_width="fill_parent"
-
-                                android:layout_height="wrap_content"
-                                android:background="#27116f"
-                                android:textStyle="bold"
-                                android:popupBackground="#27116f "
-                                android:textColor="#27116f"
-                                />
-                                />
-
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="5dp"
-                                android:background="#3d1ab0" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="12dp">
-
-                            <TextView
                                 android:id="@+id/assign"
 
                                 android:layout_width="match_parent"
@@ -328,8 +165,73 @@
                                 android:textAlignment="center"
                                 android:textStyle="bold"
                                 android:textColor="#27116f"
-                                android:textSize="24sp"
+                                android:textSize="20sp"
                                  />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/name1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5.5"
+                                android:text="PF No"
+                                android:textColor="#27116f"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            >
+
+                            <AutoCompleteTextView
+                                android:id="@+id/autopf"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/buttondesign"
+                                android:paddingLeft="10dp"
+                                android:fontFamily="@font/open_sans_bold"
+
+                                android:inputType="textCapWords"
+
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textColorHint="#333333"
+                                android:textSize="18sp"
+                                />
 
 
                         </LinearLayout>
@@ -420,11 +322,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/open_sans_bold"
-                                android:text="PF No:"
-                                android:textStyle="bold"
+                                android:text="Mobile"
                                 android:textColor="#27116f"
                                 android:textSize="18sp"
-                              />
+                                android:textStyle="bold" />
 
 
                         </LinearLayout>
@@ -464,6 +365,165 @@
                                  />
 
 
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/time1"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Census Station Nomination"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textSize="20sp"
+                                />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/Section"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="Section"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textSize="18sp"
+                                />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/style"
+                            android:orientation="vertical"
+
+                            >
+
+                            <Spinner
+
+                                android:id="@+id/Secname"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:popupBackground="@drawable/style"
+
+                               />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="5dp"
+                                android:background="#3d1ab0" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/station"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Station"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textSize="18sp"
+                                />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/style"
+                            android:orientation="vertical"
+
+                            >
+
+                            <Spinner
+
+                                android:id="@+id/Stationview"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:popupBackground="@drawable/style"
+
+                                />
+                            />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="5dp"
+                                android:background="#3d1ab0" />
                         </LinearLayout>
                     </LinearLayout>
 

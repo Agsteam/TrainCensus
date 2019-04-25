@@ -12,7 +12,7 @@
     <LinearLayout
         android:id="@+id/lay1"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="8dp"
@@ -46,10 +46,10 @@
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:layout_marginTop="30dp"
-            android:text="Sundar kannan"
+            android:text="Gayathri Mohandoss"
             android:textAlignment="center"
             android:textColor="#fff"
-            android:textSize="36sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             android:visibility="invisible" />
 
@@ -57,12 +57,12 @@
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:layout_marginTop="30dp"
-            android:text="Sundar kannan"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="  "
             android:textAlignment="center"
             android:textColor="#fff"
-            android:textSize="36sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
     </LinearLayout>
