@@ -8,14 +8,40 @@
     android:layout_height="match_parent"
     tools:context=".Divassign"
     android:orientation="vertical"
-    android:background="#fff"
+    android:background="@drawable/bc"
     android:gravity="right">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar">
 
-    </include>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+
+        android:background="@drawable/style"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppTheme.PopupOverlay"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <TextView
+            android:id="@+id/dividshow"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Division Officer"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </android.support.v7.widget.Toolbar>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -95,9 +121,10 @@
                                 android:layout_weight="5.5"
                                 android:fontFamily="@font/open_sans_bold"
                                 android:text="Division Name"
-                                android:textColor="#205cf6"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                 />
 
 
                         </LinearLayout>
@@ -123,7 +150,7 @@
                             <TextView
                                 android:id="@+id/divnameview"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="30dp"
                                 android:background="@drawable/buttondesign"
                                 android:fontFamily="@font/open_sans_bold"
                                 android:inputType="number"
@@ -132,8 +159,9 @@
                                 android:maxLines="1"
                                 android:singleLine="true"
                                 android:textAlignment="center"
-                                android:textColor="#01B9F5"
-                                android:textColorHint="#333333"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+
                                 android:textSize="18sp" />
 
                             <View
@@ -157,13 +185,40 @@
                             android:paddingTop="12dp">
 
                             <TextView
-                                android:id="@+id/Section"
+                                android:id="@+id/assign"
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/open_sans_bold"
-                                android:text="Section"
-                                android:textColor="#205cf6"
+                                android:text="Census Officer Nomination"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textSize="24sp"
+                                 />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/name1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5.5"
+                                android:text="PF No"
+                                android:textColor="#27116f"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
@@ -184,6 +239,232 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            >
+
+                            <AutoCompleteTextView
+                                android:id="@+id/autopf"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/buttondesign"
+                                android:paddingLeft="10dp"
+                                android:fontFamily="@font/open_sans_bold"
+
+                                android:inputType="textCapWords"
+
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textColorHint="#333333"
+                                android:textSize="18sp"
+                                />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5.5"
+                                android:text="Name"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textSize="18sp"
+                                 />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            >
+
+                            <EditText
+                                android:id="@+id/nameview"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/buttondesign"
+                                android:paddingLeft="10dp"
+                                android:fontFamily="@font/open_sans_bold"
+
+                                android:inputType="textCapWords"
+
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textColorHint="#333333"
+                                android:textSize="18sp"
+                                 />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/pfno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="Mobile"
+                                android:textColor="#27116f"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--****ADDRESS LINE 2 FIELD****-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            >
+
+                            <EditText
+                                android:id="@+id/Pfno"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:background="@drawable/buttondesign"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:paddingLeft="10dp"
+                                android:inputType="textCapWords"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textSize="18sp"
+                                 />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/time"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Census Station Nomination"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textSize="20sp"
+                                />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+                                android:id="@+id/Section"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/open_sans_bold"
+                                android:text="Section"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
+                                android:textSize="18sp"
+                                />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:background="@drawable/style"
                             android:orientation="vertical"
 
@@ -193,17 +474,17 @@
 
                                 android:id="@+id/Secname"
                                 android:layout_width="fill_parent"
-
                                 android:layout_height="wrap_content"
-
-                                android:popupBackground="@color/ic_launcher_background"
-                                android:spinnerMode="dropdown" />
+                                android:background="#27116f"
+                                android:textStyle="bold"
+                                android:popupBackground="#27116f"
+                                android:textColor="#27116f"/>
 
 
                             <View
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#dad8d8" />
+                                android:layout_height="5dp"
+                                android:background="#3d1ab0" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -229,9 +510,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Station"
-                                android:textColor="#205cf6"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                />
 
 
                         </LinearLayout>
@@ -261,177 +543,18 @@
                                 android:layout_width="fill_parent"
 
                                 android:layout_height="wrap_content"
-
+                                android:background="#27116f"
+                                android:textStyle="bold"
+                                android:popupBackground="#27116f "
+                                android:textColor="#27116f"
                                 />
+                            />
 
 
                             <View
                                 android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#dad8d8" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="12dp">
-
-                            <TextView
-                                android:id="@+id/assign"
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/open_sans_bold"
-                                android:text="Fill Officer Details"
-                                android:textAlignment="center"
-                                android:textColor="#205cf6"
-                                android:textSize="24sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="12dp">
-
-                            <TextView
-                                android:id="@+id/name"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="5.5"
-                                android:text="Name"
-                                android:textColor="#205cf6"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-
-                            >
-
-                            <EditText
-                                android:id="@+id/nameview"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/buttondesign"
-
-                                android:fontFamily="@font/open_sans_bold"
-                                android:inputType="number"
-
-
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:textAlignment="center"
-                                android:textColor="#012B74"
-                                android:textColorHint="#333333"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#dad8d8" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="12dp">
-
-                            <TextView
-                                android:id="@+id/pfno"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/open_sans_bold"
-                                android:text="PfNo"
-                                android:textColor="#205cf6"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <!--****ADDRESS LINE 2 FIELD****-->
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-
-                            >
-
-                            <EditText
-                                android:id="@+id/Pfno"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/buttondesign"
-                                android:fontFamily="@font/open_sans_bold"
-
-                                android:inputType="number"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:textAlignment="center"
-                                android:textColor="#012B74"
-                                android:textColorHint="#333333"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#dad8d8" />
+                                android:layout_height="5dp"
+                                android:background="#3d1ab0" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -453,14 +576,61 @@
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Time"
-                                android:textColor="#205cf6"
+                                android:text="Census Shift Nomination"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
                                 android:textSize="20sp"
-                                android:textStyle="bold" />
+                                 />
 
 
                         </LinearLayout>
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp">
+
+                            <TextView
+
+
+                                android:id="@+id/date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Date"
+                                android:textAlignment="viewStart"
+                                android:textColor="#012B74"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/dateview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="#fff"
+                            android:hint="DD/MM/YYYY"
+                            android:maxLines="1"
+                            android:textAlignment="center"
+                            android:textColor="#012B74"
+                            android:textColorHint="#021b74"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:focusable="false"
+                            android:inputType="date"/>
+                    </LinearLayout>
+
 
 
                     <!--****ADDRESS LINE 2 FIELD****-->
@@ -483,11 +653,12 @@
 
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Shift in"
+                                android:text="Shift Start"
                                 android:textAlignment="viewStart"
-                                android:textColor="#205cf6"
+                                android:textStyle="bold"
+                                android:textColor="#27116f"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                 />
 
 
                         </LinearLayout>
@@ -513,21 +684,19 @@
                             <TextView
                                 android:id="@+id/shiftinview"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="30dp"
                                 android:background="@drawable/buttondesign"
-                                android:hint="7.00Am"
+                                android:hint="HH:MM"
                                 android:inputType="number"
                                 android:maxLines="1"
                                 android:textAlignment="center"
                                 android:textColor="#012B74"
-                                android:textColorHint="#333333"
+                                android:textColorHint="#012B74"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                 />
 
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#dad8d8" />
+
                         </LinearLayout>
                     </LinearLayout>
 
@@ -550,9 +719,10 @@
                                 android:id="@+id/shiftout"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Shift out"
+                                android:text="Shift End
+"
                                 android:textAlignment="viewStart"
-                                android:textColor="#205cf6"
+                                android:textColor="#012B74"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
@@ -582,88 +752,23 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/buttondesign"
-                                android:hint="7.00pm"
+                                android:hint="HH:MM"
                                 android:inputType="number"
                                 android:maxLines="1"
                                 android:textAlignment="center"
                                 android:textColor="#012B74"
-                                android:textColorHint="#333333"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#dad8d8" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:paddingTop="12dp">
-
-                            <TextView
-
-
-                                android:id="@+id/date"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Date"
-                                android:textAlignment="viewStart"
-                                android:textColor="#205cf6"
+                                android:textColorHint="#012B74"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
 
                         </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/dateview"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:background="@color/c"
-                            android:hint="Enter duty date"
-                            android:maxLines="1"
-                            android:textAlignment="center"
-                            android:textColor="#01B9F5"
-                            android:textColorHint="#fff"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
                     </LinearLayout>
 
 
                     <!--****ADDRESS LINE 2 FIELD****-->
 
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-
-                            >
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="#dad8d8" />
-                        </LinearLayout>
-                    </LinearLayout>
 
 
                     <!--****ADDRESS LINE 2 FIELD****-->
@@ -685,11 +790,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:layout_alignParentBottom="true"
-                                android:background="@drawable/signinbutton"
+                                android:background="@drawable/style"
                                 android:gravity="center"
                                 android:text="SUBMIT"
                                 android:textColor="#fff"
-                                android:textSize="13dp" />
+                                android:textSize="18sp" />
 
                         </LinearLayout>
                     </LinearLayout>
@@ -702,19 +807,5 @@
         </ScrollView>
 
     </LinearLayout>
-
-
-    <android.support.design.widget.FloatingActionButton
-        style="@style/AppTheme.AppBarOverlay"
-        android:layout_width="wrap_content"
-        android:id="@+id/fab"
-        android:layout_height="75dp"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="16dp"
-        android:orientation="vertical"
-        android:src="@drawable/key"
-        app:backgroundTint="@color/c"
-        app:fabSize="auto"
-        />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -18,6 +18,37 @@
     <string name="to">To</string>
     <string name="action_settings" />
     <string name="census_officer">CENSUS OFFICER</string>
+    <string name="logout">Logout</string>
+    <string name="click_coach_type_and_enter_no_of_coaches">Click coach type and Enter No of coaches</string>
+    <string name="census_officers">Census Officer</string>
+    <string name="load_latest_arrival_trains">Load Latest Arrival Trains</string>
+    <string name="gsr">GSR</string>
+    <string name="total_count">TOTAL COUNT</string>
+    <string name="submits">SUBMIT</string>
+    <string name="f">Census Officers</string>
+
+    <string name="a">Please Fill Census Officer Nmae</string>
+    <string name="a1">Please Fill Census Officer Pf Number</string>
+    <string name="a2">Please Select Duty Date</string>
+    <string name="a3">Please Pick Shift In Time</string>
+    <string name="a4">Please Pick Shift Out Time</string>
+    <string name="a6">Recheck</string>
+    <string name="a7">HH:MM</string>
+    <string name="a8">HH:MM</string>
+    <string name="a9">DDMMYYYY</string>
+    <string name="a10">Please Check all the Fields</string>
+    <string name="logt" />
+    <string name="logoutoi">Logout</string>
+    <string name="todo1">a</string>
+    <string name="empty" />
+    <string name="password">(Password will be issued by HQ Admin)</string>
+    <string name="pass1">PASSWORD IS YOUR MOBILE NUMBER</string>
+    <string name="user12">USER ID IS YOUR PF NUMBER</string>
+    <string name="field1">field</string>
+    <string name="censusofficer">Census Officer</string>
+    <string name="whq">HQ ADMIN</string>
+    <string name="wopen">Opening your dashboard</string>
+    <string name="wdiv">DIV ADMIN</string>
 
     <string-array name="hu">
 
@@ -25,7 +56,6 @@
         <item>jj</item>
         <item>huhu</item>
     </string-array>
-
 
 
 </resources>
