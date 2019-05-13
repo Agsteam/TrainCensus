@@ -23,7 +23,7 @@
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="131dp"
+            android:layout_height="160dp"
             android:background="@drawable/metroo"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toTopOf="@+id/mark"

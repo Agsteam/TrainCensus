@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_gravity="fill"
+    android:layout_marginLeft="100dp"
 
 
 
@@ -21,6 +23,7 @@
         android:id="@+id/name1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="#fff"
 
         android:textStyle="bold"
@@ -33,17 +36,16 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:textStyle="bold"
-            card_view:layout_constraintHorizontal_weight="10"
+            android:layout_height="26dp"
             android:background="#3d1ab0"
             android:text="@string/text"
             android:textColor="#fff"
+            android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintHorizontal_weight="10"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="13dp" />
+            card_view:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -55,8 +57,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="#3d1ab0"
-            android:gravity="center"
-            android:text="@string/textview"
+
+
             android:textColor="#fff"
             android:textStyle="bold"
             card_view:layout_constraintBottom_toBottomOf="parent"
@@ -73,7 +75,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="#3d1ab0"
-            android:gravity="center"
+
             android:text="@string/view"
             android:textColor="#fff"
             android:textStyle="bold"
@@ -87,12 +89,11 @@
             android:id="@+id/textView12"
             android:layout_width="90dp"
             android:layout_height="22dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="8dp"
             android:background="#3d1ab0"
-            android:gravity="center"
 
             android:text="@string/fg"
             android:textColor="#fff"
@@ -114,6 +115,7 @@
             android:layout_marginTop="8dp"
             android:background="#01b1fd"
             android:textColor="#fff"
+
             android:textSize="13dp"
             android:textStyle="bold"
             android:text="AHC"
@@ -128,6 +130,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:background="#01b1fd"
+
             android:textSize="13dp"
             android:textStyle="bold"
             android:textColor="#fff"
@@ -138,19 +141,19 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="90dp"
-            android:textStyle="bold"
             android:layout_height="22dp"
-            card_view:layout_constraintHorizontal_weight="10"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginTop="8dp"
-            android:textSize="13dp"
             android:layout_marginEnd="8dp"
             android:background="#01b1fd"
             android:text="%Occ"
+
             android:textColor="#fff"
+            android:textSize="13dp"
+            android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintHorizontal_weight="10"
             card_view:layout_constraintStart_toEndOf="@+id/textView2"
             card_view:layout_constraintTop_toBottomOf="@+id/textView8" />
 

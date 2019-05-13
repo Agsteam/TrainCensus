@@ -32,10 +32,11 @@ public class Fumessage extends AppCompatActivity {
         count.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Fumessage.this,Fucounting.class);
+                Intent intent=new Intent(Fumessage.this,Trainprofile.class);
                 intent.putExtra("div",getIntent().getStringExtra("div"));
                 intent.putExtra("sta",getIntent().getStringExtra("sta"));
                 intent.putExtra("dutydate",getIntent().getStringExtra("dutydate"));
+                intent.putExtra("sec",sec.getText().toString());
                 startActivity(intent);
                 finish();
             }

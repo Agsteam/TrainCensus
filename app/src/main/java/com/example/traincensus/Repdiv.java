@@ -99,12 +99,15 @@ public class Repdiv extends AppCompatActivity
                 }
                 Collections.sort(dt);
                 dt1 = removeDuplicates(dt);
+                Log.e("sun",""+dt1);
                 if(!tnum1.equals(""))
                     second();
                 else {
-                 Toast toast=Toast.makeText(Repdiv.this, "Train No you entered is not valid for your Division!!!", Toast.LENGTH_SHORT);
+                    Toast toast=Toast.makeText(Repdiv.this, "Train No you entered is not valid for your Division!!!", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.START,90,0);
                     toast.show();
+
+
                 }
             }
             @Override
@@ -120,16 +123,19 @@ public class Repdiv extends AppCompatActivity
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(int o=0;o<dt1.size();o++)
-                for (DataSnapshot postSnapshot2 : dataSnapshot.getChildren())
-                {
-                    Adddata1 post2 = postSnapshot2.getValue(Adddata1.class);
-                    if ((tnum1.equals(post2.getTrain())) && (dt.get(o).equals(post2.getDudate()))&&(div.equals(post2.getDiv())))
+                    for (DataSnapshot postSnapshot2 : dataSnapshot.getChildren())
                     {
-                        st.add(post2.getStation());
+                        Adddata1 post2 = postSnapshot2.getValue(Adddata1.class);
+                        String tq1 = post2.getTrain();
+                        tq1 = tq1.substring(0, 5);
+                        if ((tnum1.equals(tq1)) && (dt.get(o).equals(post2.getDudate()))&&(div.equals(post2.getDiv())))
+                        {
+                            st.add(post2.getStation());
+                        }
+                        Collections.sort(st);
+                        st1 = removeDuplicates(st);
+                        Log.e("sun",""+st1);
                     }
-                    Collections.sort(st);
-                    st1 = removeDuplicates(st);
-                }
                 third();
             }
             @Override
@@ -158,7 +164,9 @@ public class Repdiv extends AppCompatActivity
                         for(j1=0;j1<st1.size();j1++)
                         {
                             Adddata1 post3 = postSnapshot3.getValue(Adddata1.class);
-                            if (((tnum1.equals(post3.getTrain())) && (dt1.get(i).equals(post3.getDudate()))) && (st1.get(j1).equals(post3.getStation()))&&(div.equals(post3.getDiv())))
+                            String tq1 = post3.getTrain();
+                            tq1 = tq1.substring(0, 5);
+                            if (((tnum1.equals(tq1)) && (dt1.get(i).equals(post3.getDudate()))) && (st1.get(j1).equals(post3.getStation()))&&(div.equals(post3.getDiv())))
                             {
                                 total=post3.getTc();
                                 count=post3.getCc();
@@ -191,8 +199,8 @@ public class Repdiv extends AppCompatActivity
     public void pass()
     {
         Intent intent=new Intent(Repdiv.this,Reportcreate.class);
-        intent.putStringArrayListExtra("st",st);
-        intent.putStringArrayListExtra("dt",dt);
+        intent.putStringArrayListExtra("st",st1);
+        intent.putStringArrayListExtra("dt",dt1);
         intent.putIntegerArrayListExtra("tav",tav);
         intent.putIntegerArrayListExtra("j",j);
         intent.putIntegerArrayListExtra("per",per);

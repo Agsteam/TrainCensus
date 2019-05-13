@@ -4,12 +4,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/po"
+        android:icon="@mipmap/loght"
         android:label="Rail Census"
-        android:roundIcon="@drawable/po"
+        android:roundIcon="@mipmap/loght"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".CoachNumber"></activity>
+        <activity android:name=".Trainprofile"></activity>
+        <activity android:name=".CoachNumber" />
         <activity
             android:name=".Fhome"
             android:screenOrientation="userPortrait"

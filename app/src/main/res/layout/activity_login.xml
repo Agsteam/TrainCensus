@@ -55,18 +55,20 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="311dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.364">
+        app:layout_constraintVertical_bias="1.0">
 
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="392dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
@@ -81,10 +83,11 @@
 
 
             <AutoCompleteTextView
-                android:layout_margin="8dp"
                 android:id="@+id/pfno"
+                style="@android:style/Widget.AutoCompleteTextView"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
+                android:layout_margin="8dp"
                 android:background="@drawable/buttondesign"
                 android:drawableLeft="@drawable/logout"
                 android:hint="PF NO"
@@ -92,6 +95,8 @@
                 android:inputType="text"
                 android:nextFocusDown="@+id/dob"
                 android:padding="10dp"
+                android:popupBackground="@color/colorPrimaryDark"
+
                 android:textColor="#012B74"
                 android:textColorHint="#012B74"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,8 +108,8 @@
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/textInputLayout"
                 android:layout_width="match_parent"
-                android:layout_margin="8dp"
                 android:layout_height="83dp"
+                android:layout_margin="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -134,15 +139,15 @@
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="266dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
                 android:gravity="center"
                 android:textColor="#012b74"
-                android:textSize="15sp"
+                android:textSize="10sp"
                 android:textStyle="bold"
                 android:visibility="invisible"
-                tools:layout_editor_absoluteX="13dp"
-                tools:layout_editor_absoluteY="154dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
@@ -151,10 +156,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="72dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 android:background="@drawable/signinbutton"
                 android:text="SIGN IN"
                 android:textColor="@android:color/white"
@@ -169,16 +172,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/signin" />
+                app:layout_constraintTop_toTopOf="@+id/signin"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </android.support.constraint.ConstraintLayout>

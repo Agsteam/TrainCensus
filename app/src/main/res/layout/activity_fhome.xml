@@ -24,7 +24,7 @@
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="180dp"
             android:background="@drawable/tte"
 
 
@@ -139,13 +139,11 @@
 
                 android:layout_marginStart="8dp"
 
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/signinbutton"
-
                 android:layout_marginBottom="8dp"
+
+                android:background="@drawable/signinbutton"
                 android:onClick="fusun2"
                 android:text="Logout"
                 android:textStyle="bold"

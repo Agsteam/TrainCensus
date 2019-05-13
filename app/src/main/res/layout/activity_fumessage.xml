@@ -41,7 +41,6 @@
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:text="Field Officer"
-                android:textAlignment="center"
                 android:textColor="#fff"
                 android:textSize="22sp"
                 android:textStyle="bold" />

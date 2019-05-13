@@ -65,12 +65,12 @@
 
         <TextView
             android:id="@+id/stationview"
-            android:layout_width="260dp"
+            android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_below="@+id/station"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="1dp"
+            android:layout_marginEnd="4dp"
             android:background="@null"
             android:text="stationview"
             android:textAlignment="viewStart"
@@ -79,6 +79,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="@+id/guideline5"
             card_view:layout_constraintTop_toTopOf="@+id/guideline4" />
 
@@ -101,11 +102,11 @@
 
         <TextView
             android:id="@+id/dateview"
-            android:layout_width="260dp"
+            android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="1dp"
+            android:layout_marginEnd="16dp"
             android:background="@null"
             android:text="dateview"
             android:textAlignment="viewStart"
@@ -113,6 +114,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="@+id/guideline5"
             card_view:layout_constraintTop_toBottomOf="@+id/stationview" />
 
@@ -136,11 +138,11 @@
 
         <TextView
             android:id="@+id/shiftinview"
-            android:layout_width="260dp"
-            android:layout_height="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="1dp"
+            android:layout_marginEnd="16dp"
             android:background="@null"
             android:hint="7.00pm"
             android:inputType="number"
@@ -151,6 +153,7 @@
             android:textStyle="bold"
 
             card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="@+id/guideline5"
             card_view:layout_constraintTop_toBottomOf="@+id/dateview" />
 
@@ -176,12 +179,12 @@
 
         <TextView
             android:id="@+id/shiftoutview"
-            android:layout_width="260dp"
-            android:layout_height="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
 
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="1dp"
+            android:layout_marginEnd="16dp"
             android:background="@null"
             android:hint="7.00pm"
             android:inputType="number"
@@ -191,6 +194,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="@+id/guideline5"
             card_view:layout_constraintTop_toBottomOf="@+id/shiftinview" />
 

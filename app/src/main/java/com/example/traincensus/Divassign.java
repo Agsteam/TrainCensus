@@ -47,11 +47,11 @@ public class Divassign extends AppCompatActivity {
     DatabaseHelper myDb;
     List<String> list, list1;
     List<String> mango;
-    TextView shiftin, shiftout, div;
+    TextView shiftin, shiftout, div,namestaff, pfnostaff;
     TimePickerDialog timePickerDialog;
     Spinner spinsec, spinsta;
     Button divsummit;
-    EditText date11, namestaff, pfnostaff;
+    EditText date11;
     String divSection, divStation, a,a1;
     FirebaseFirestore database1 = FirebaseFirestore.getInstance();
     FirebaseFirestore database2 = FirebaseFirestore.getInstance();
@@ -138,7 +138,7 @@ public class Divassign extends AppCompatActivity {
                                     tamil();
                                 }
                             })
-                            .setNegativeButton("Reassign", new DialogInterface.OnClickListener() {
+                            .setNegativeButton("Recheck", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();
                                 }
@@ -396,7 +396,7 @@ public class Divassign extends AppCompatActivity {
         alertDialogBuilder1
                 .setMessage(show1(a1))
                 .setCancelable(false)
-                .setPositiveButton("Confirm", new DialogInterface.OnClickListener()
+                .setPositiveButton("Reassign", new DialogInterface.OnClickListener()
                 {
                     public void onClick(DialogInterface dialog, int id)
                     {
@@ -410,7 +410,7 @@ public class Divassign extends AppCompatActivity {
                         shiftout.setText("HH:MM");
                     }
                 })
-                .setNegativeButton("Reassign", new DialogInterface.OnClickListener()
+                .setNegativeButton("New Officer", new DialogInterface.OnClickListener()
                 {
                     public void onClick(DialogInterface dialog, int id)
                     {

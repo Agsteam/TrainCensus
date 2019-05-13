@@ -191,8 +191,8 @@ public class Report extends AppCompatActivity
     public void pass()
     {
         Intent intent=new Intent(Report.this,Reportcreate.class);
-        intent.putStringArrayListExtra("st",st);
-        intent.putStringArrayListExtra("dt",dt);
+        intent.putStringArrayListExtra("st",st1);
+        intent.putStringArrayListExtra("dt",dt1);
         intent.putIntegerArrayListExtra("tav",tav);
         intent.putIntegerArrayListExtra("j",j);
         intent.putIntegerArrayListExtra("per",per);

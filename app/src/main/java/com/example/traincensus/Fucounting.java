@@ -40,7 +40,7 @@ import okhttp3.ResponseBody;
 public class Fucounting extends AppCompatActivity
 {
     static EditText gsa1,gsrda1,gslrda1,gsra1,wgscza1,gslra1;
-    EditText g1c,g2c,g3c,g4c,g5c,g6c,total;
+    EditText g1c,g2c,g3c,g4c,g5c,g6c;
     final Context context = this;
     private final OkHttpClient client = new OkHttpClient();
     private final Gson gson = new Gson();
@@ -51,8 +51,7 @@ public class Fucounting extends AppCompatActivity
     String c,code="",a,station;
     String todayAsString,aq,coachshow="";
     CheckBox g1,g2,g3,g4,g5,g6;
-    TextView ccy1;
-    AutoCompleteTextView listView;
+    TextView ccy1,ct,cn,total,listView;
     ProgressBar tload;
     List<String> list;
     Button trains1,saverecord;
@@ -70,7 +69,7 @@ public class Fucounting extends AppCompatActivity
         savetask = FirebaseDatabase.getInstance().getReference("field");
         trains1 =  findViewById(R.id.button);
         saverecord = findViewById(R.id.submit);
-        g4 =  findViewById(R.id.gsr);
+       /* g4 =  findViewById(R.id.gsr);
         g2 =  findViewById(R.id.gsrd);
         g6 =  findViewById(R.id.gslrd);
         g1 =  findViewById(R.id.gs);
@@ -81,17 +80,24 @@ public class Fucounting extends AppCompatActivity
         g6c = findViewById(R.id.gslrdv);
         g1c = findViewById(R.id.gsv);
         g5c = findViewById(R.id.gslrv);
-        g3c = findViewById(R.id.wgsczv);
+        g3c = findViewById(R.id.wgsczv);*/
+        ct=findViewById(R.id.cto);
+        ct.setText(getIntent().getStringExtra("ct"));
+        cn=findViewById(R.id.cno);
+        cn.setText(getIntent().getStringExtra("cn"));
         total =  findViewById(R.id.tc);
+        total.setText(""+getIntent().getIntExtra("atc",0));
         ccy1 =  findViewById(R.id.ccy);
+        ccy1.setText(""+getIntent().getIntExtra("tcc",0));
         listView =  findViewById(R.id.tno);
-        tload =  findViewById(R.id.progressBar2);
+        listView.setText(getIntent().getStringExtra("trainnumber"));
+       /* tload =  findViewById(R.id.progressBar2);
         gsa1=findViewById(R.id.gsa);
         gsrda1=findViewById(R.id.gsrda);
         gslrda1=findViewById(R.id.gslrda);
         gsra1=findViewById(R.id.gsra);
         wgscza1=findViewById(R.id.wgscza);
-        gslra1=findViewById(R.id.gslra);
+        gslra1=findViewById(R.id.gslra);*/
         super.onStart();
         station=getIntent().getStringExtra("sta");
         saverecord.setOnClickListener(new View.OnClickListener()
@@ -99,7 +105,7 @@ public class Fucounting extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                todayAsString = getIntent().getStringExtra("dutydate");
+               /* todayAsString = getIntent().getStringExtra("dutydate");
                 if (total.getText().toString().equals(""))
                 { total.setError("please fill Total Count"); }
                 else
@@ -149,22 +155,23 @@ public class Fucounting extends AppCompatActivity
                 if (listView.getText().toString().trim().length() < 6)
                     listView.setError("please select train no from the list ");
                 else if ((occ1 != 0) && (cc1 != 0))
-                {
-                    float z = (float) occ1 / (float) cc1;
+                {*/
+                    float z = (float) getIntent().getIntExtra("atc",1)/ (float) getIntent().getIntExtra("tcc",1);
                     average = (int) (z * 100);
-                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-                    alertDialogBuilder.setTitle("Confirm");
+                String id1 = savetask.push().getKey();
+                Adddata1 artist = new Adddata1(getIntent().getStringExtra("div"), getIntent().getStringExtra("sta"), getIntent().getStringExtra("dutydate"), getIntent().getStringExtra("trainnumber"), getIntent().getIntExtra("tcc",0), getIntent().getIntExtra("atc",0), average,getIntent().getStringExtra("cn"),getIntent().getStringExtra("ct"),getIntent().getStringExtra("sec"));
+                savetask.child((id1)).setValue(artist);
+                   AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                    alertDialogBuilder.setTitle("Success");
                     alertDialogBuilder
-                            .setMessage(show(a))
+                            .setMessage("Record Saved Successful1y")
                             .setCancelable(false)
                             .setPositiveButton("Confirm", new DialogInterface.OnClickListener()
                             {
                                 public void onClick(DialogInterface dialog, int id)
                                 {
-                                    String id1 = savetask.push().getKey();
-                                    Adddata1 artist = new Adddata1(getIntent().getStringExtra("div"), getIntent().getStringExtra("sta"), todayAsString, listView.getText().toString(), cc1, occ1, average,aq,coachshow);
-                                    savetask.child((id1)).setValue(artist);
-                                    g1.setChecked(false);
+
+                                   /* g1.setChecked(false);
                                     g2.setChecked(false);
                                     g3.setChecked(false);
                                     g4.setChecked(false);
@@ -183,27 +190,39 @@ public class Fucounting extends AppCompatActivity
                                     gslrda1.setText("");
                                     gsra1.setText("");
                                     wgscza1.setText("");
-                                    gslra1.setText("");
+                                    gslra1.setText("");*/
                                     Toast.makeText(Fucounting.this,"Record Saved Successfully",Toast.LENGTH_LONG).show();
-                                    listView.requestFocus();
-                                    coachshow="";
+                                    Intent intent=new Intent(Fucounting.this,Trainprofile.class);
+                                    intent.putExtra("div", getIntent().getStringExtra("div"));
+                                    intent.putExtra("dutydate", getIntent().getStringExtra("dutydate"));
+                                    intent.putExtra("sta", getIntent().getStringExtra("sta"));
+                                    intent.putExtra("sec", getIntent().getStringExtra("sec"));
+                                    startActivity(intent);
+                                    finish();
+                                    //listView.requestFocus();
+                                    //coachshow="";
                                 }
-                            })
-                            .setNegativeButton("Recount", new DialogInterface.OnClickListener()
+                            });
+                           /* .setNegativeButton("Recount", new DialogInterface.OnClickListener()
                             {
                                 public void onClick(DialogInterface dialog, int id)
                                 {
-                                    coachshow="";
-                                    dialog.cancel();
+                                    Intent intent=new Intent(Fucounting.this,Trainprofile.class);
+                                    intent.putExtra("div", getIntent().getStringExtra("div"));
+                                    intent.putExtra("dutydate", getIntent().getStringExtra("dutydate"));
+                                    intent.putExtra("sta", getIntent().getStringExtra("sta"));
+                                    intent.putExtra("sec", getIntent().getStringExtra("sec"));
+                                    startActivity(intent);
+                                   finish();
                                 }
-                            });
+                            });*/
                     AlertDialog alertDialog = alertDialogBuilder.create();
                     alertDialog.show();
-                }
-                else
-                    Toast.makeText(Fucounting.this, "Please enter proper values", Toast.LENGTH_SHORT).show();
+               // }
+                //else
+                  //  Toast.makeText(Fucounting.this, "Please enter proper values", Toast.LENGTH_SHORT).show();
             }
-        });
+        });/*
         gsa1.addTextChangedListener(new TextWatcher()
         {
             @Override
@@ -702,7 +721,7 @@ public class Fucounting extends AppCompatActivity
         tload.setVisibility(View.VISIBLE);
         sun1();
             }
-        });
+        });*/
     }
     @Override
     protected void onStart() {
@@ -730,7 +749,7 @@ public class Fucounting extends AppCompatActivity
     protected void onDestroy() {
         super.onDestroy();
     }
-    public void sun1()
+    /*public void sun1()
     {
         client.newCall(request).enqueue(new Callback()
         {
@@ -864,10 +883,10 @@ public class Fucounting extends AppCompatActivity
             }
         }
         ccy1.setText(getString(R.string.empty)+(nugs12+nugsrd12+nugslrd12+nugs112+nugslr12+nugsld12));
-    }
-    public String show(String t)
+    }*/
+   // public String show(String t)
     {
-        if(nugs12!=0)
+       /* if(nugs12!=0)
         {
             nugs121=nugs12/90;
             coachshow+="GS  "+nugs121;}
@@ -888,11 +907,12 @@ public class Fucounting extends AppCompatActivity
             coachshow+="  GSLR  "+nugsld121;}
         if(nugslr12!=0)
         {   nugslr121=nugslr12/42;
-            coachshow+="  WGSCZ  "+nugslr121;}
-        t = "Train No :" + listView.getText().toString()+ '\n'+"Coach Type :"+coachshow +'\n'+ "  Carrying Capacity :" + ccy1.getText().toString() + '\n' +"  Actual Occupied :"+total.getText().toString()+'\n'+"  Percentage  :"+average;
-        return (t);
+            coachshow+="  WGSCZ  "+nugslr121;}*/
+
+      //  t = "Train No :" + getIntent().getStringExtra("trainnumber")+ '\n'+"Coach Type :"+getIntent().getStringExtra("ct") +'\n'+ "  Carrying Capacity :" + getIntent().getIntExtra("tcc",0) + '\n' +"  Actual Occupied :"+getIntent().getIntExtra("atc",0)+'\n'+"  Percentage  :"+average;
+        //return (t);
     }
-    public  void sun2()
+   /* public  void sun2()
     {
         gsa1.setError(null);
         wgscza1.setError(null);
@@ -912,7 +932,7 @@ public class Fucounting extends AppCompatActivity
         g4.setError(null);
         g5.setError(null);
         g6.setError(null);
-    }
+    }*/
     @Override
     public void onBackPressed ()
     {

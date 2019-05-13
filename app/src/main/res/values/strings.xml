@@ -56,12 +56,23 @@
     <string name="whq">HQ ADMIN</string>
     <string name="wopen">Opening your dashboard</string>
     <string name="wdiv">DIV ADMIN</string>
+    <string name="reports">Reports</string>
+    <string name="todate">ToDate</string>
+    <string name="from_date">From Date</string>
 
-    <string-array name="hu">
-
-
-        <item>jj</item>
-        <item>huhu</item>
+    <string-array name="array_name">
+        <item>Select</item>
+        <item>GS(90)</item>
+        <item>LHB-GS(100)</item>
+        <item>GR-RMS(50)</item>
+        <item>LHB-GS-RMS(60)</item>
+        <item>WGSCZ(108)</item>
+        <item>SLR(40)</item>
+        <item>GSRD(64)</item>
+        <item>SLRD(24)</item>
+        <item>D/Reseved-GS(72)</item>
+        <item>D/Reserved-LHB(80)</item>
+        <item>Full-RMS(0)</item>
     </string-array>
 
 
