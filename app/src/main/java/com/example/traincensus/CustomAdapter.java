@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder>
 {
+    int spi,cned,atced;
     private LayoutInflater inflater;
     public static ArrayList<EditModel> editModelArrayList;
     public CustomAdapter(Context ctx, ArrayList<EditModel> editModelArrayList)
@@ -25,6 +26,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     {
         View view = inflater.inflate(R.layout.rv_item, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
+        spi=0;
+        cned=0;
+        atced=0;
         return holder;
     }
     @Override
@@ -49,8 +53,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             atc=itemView.findViewById(R.id.edit_atc);
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    String div=parent.getItemAtPosition(position).toString();
+                public void onItemSelected(AdapterView<?> parent, View view, int position1, long id) {
+                    String div=parent.getItemAtPosition(position1).toString();
                     editModelArrayList.get(getAdapterPosition()).setSpinnerValue(div);
                 }
                 @Override

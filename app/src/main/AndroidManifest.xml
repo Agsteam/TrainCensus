@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/loght"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Trainprofile"></activity>
+        <activity android:name=".Stationrepfield"></activity>
+        <activity android:name=".StationRec" />
+        <activity android:name=".Trainprofile" />
         <activity android:name=".CoachNumber" />
         <activity
             android:name=".Fhome"

@@ -70,6 +70,7 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/con1"
         app:layout_constraintVertical_bias="1.0">
@@ -98,13 +99,13 @@
                 android:id="@+id/Viewdu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/signinbutton"
-
                 android:layout_marginStart="8dp"
+
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:background="@drawable/signinbutton"
                 android:onClick="fusun"
                 android:text="View Your Duty"
                 android:textStyle="bold"
@@ -121,8 +122,8 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/signinbutton"
                 android:layout_marginRight="8dp"
+                android:background="@drawable/signinbutton"
                 android:onClick="fusun1"
                 android:text="Census Page"
                 android:textStyle="bold"
@@ -130,6 +131,25 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Viewdu" />
+
+            <Button
+                android:id="@+id/rep"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/signinbutton"
+                android:onClick="fusun4"
+                android:text="Station Report"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/count"
+                app:layout_constraintVertical_bias="0.0" />
 
 
             <Button
@@ -151,7 +171,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/count" />
+                app:layout_constraintTop_toBottomOf="@+id/rep" />
 
 
         </android.support.constraint.ConstraintLayout>
