@@ -7,138 +7,127 @@
     android:background="#fff"
     tools:context=".Splashscreen">
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:layout_width="124dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/dfd"
+                android:contentDescription="@string/todo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
 
-            android:tag="tag content">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.0">
 
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                android:text="Southern Railway"
+                android:textColor="#01b9f5"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/open_sans_bold" />
+
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+
+                android:text="Welcome to"
+                android:textColor="#01b9f5"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/open_sans_bold" />
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+
+                android:text="Passenger count...Anytime...Anywhere..."
+                android:textColor="#012b74"
+                android:textSize="12sp"
+                app:fontFamily="@font/open_sans_bold" />
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+
+                android:text="Rail Census App"
+                android:textColor="#012b74"
+                android:textSize="30sp"
+                app:fontFamily="@font/open_sans_bold" />
+
+            <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="1dp"
-                    android:background="@drawable/lo" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-                <ImageView
-                    android:layout_width="66dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/dfd" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="581dp"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-
-                    android:text="Indian Railways"
-                    android:textColor="#01b9f5"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/open_sans_bold" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-
-                    android:text="Southern Railway"
-                    android:textColor="#01b9f5"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/open_sans_bold" />
-
-
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-
-                    android:text="Welcomes you to"
-                    android:textColor="#01b9f5"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:fontFamily="@font/open_sans_bold" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-
-                    android:text="Rail Census"
-                    android:textColor="#012b74"
-                    android:textSize="30sp"
-                    app:fontFamily="@font/open_sans_bold" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-
-                    android:text="Any time...Anywhere..."
-                    android:textColor="#012b74"
-                    android:textSize="12sp"
-                    app:fontFamily="@font/open_sans_bold" />
-
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="370dp"
-                    android:layout_height="254dp"
-                    android:layout_gravity="center"
-
-                    android:layout_marginTop="30dp"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/logos" />
-
-
-            </LinearLayout>
+                app:srcCompat="@drawable/logos" />
 
 
         </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
 
 
 
 
-</android.support.constraint.ConstraintLayout>

@@ -1,53 +1,88 @@
-package com.example.traincensus;
+ package com.example.traincensus;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class Mainscreen extends AppCompatActivity {
 
-    Button btnfo,btndiv,btnhq;
+ public class Mainscreen extends AppCompatActivity
+{
+
     String loginlable;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_mainscreen);
-            btnhq=(Button)findViewById(R.id.hq);
-            btnhq.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(),"Page under construction",Toast.LENGTH_LONG).show();
-                }
-
-
-            });
-            btndiv=(Button)findViewById(R.id.div);
-            btndiv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    loginlable="Divisional Admin";
-                    openLogin();
-                }
-            });
-            btnfo= (Button) findViewById(R.id.fo);
-            btnfo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    loginlable="Census Officer";
-                    openLogin();
-                }
-            });
-        }
-        public void openLogin()
-        {
-            Intent intent = new Intent(Mainscreen.this, Login.class);
-            intent.putExtra("lable",loginlable);
-            startActivity(intent);
-        }
+        setContentView(R.layout.activity_mainscreen);
+    }
+    public void tapToAnimate(View view)
+    {
+        Button button=findViewById(R.id.hq);
+        final Animation animation= AnimationUtils.loadAnimation(this,R.anim.bounce);
+        MyBounceinterpolator interpolator = new MyBounceinterpolator(0.2,20);
+        animation.setInterpolator(interpolator);
+        button.startAnimation(animation);
+        loginlable="Head Quarters";
+        openLogin();
+    }
+    public void tapToAnimate1(View view)
+    {
+        Button button=findViewById(R.id.div);
+        final Animation animation= AnimationUtils.loadAnimation(this,R.anim.bounce);
+        MyBounceinterpolator interpolator = new MyBounceinterpolator(0.2,20);
+        animation.setInterpolator(interpolator);
+        button.startAnimation(animation);
+        loginlable="Division Admin";
+        openLogin();
+    }
+    public void tapToAnimate2(View view)
+    {
+        Button button=findViewById(R.id.fo);
+        final Animation animation= AnimationUtils.loadAnimation(this,R.anim.bounce);
+        MyBounceinterpolator interpolator = new MyBounceinterpolator(0.2,20);
+        animation.setInterpolator(interpolator);
+        button.startAnimation(animation);
+        loginlable="Census Officer";
+        openLogin();
+    }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+    public void openLogin()
+    {
+       Intent intent = new Intent(Mainscreen.this, Login.class);
+       intent.putExtra("lable",loginlable);
+       startActivity(intent);
+       finish();
+    }
+}

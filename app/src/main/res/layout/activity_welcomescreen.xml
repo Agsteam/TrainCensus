@@ -6,18 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Welcomescreen"
     android:orientation="vertical"
-    android:background="#fff">
+    android:background="@drawable/bc">
 
 
     <LinearLayout
         android:id="@+id/lay1"
         android:layout_width="match_parent"
-        android:layout_height="204dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -41,16 +41,28 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/name1"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_marginTop="30dp"
+            android:text="Gayathri Mohandoss"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
 
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:layout_marginTop="30dp"
-            android:text="Sundar kannan"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="  "
             android:textAlignment="center"
-            android:textColor="#01b9f5"
-            android:textSize="36sp"
+            android:textColor="#fff"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -76,10 +88,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@drawable/shape1"
+
         android:text="Opening your assignment"
         android:textAlignment="center"
-        android:textColor="#fff"
+        android:textColor="#012B74"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
